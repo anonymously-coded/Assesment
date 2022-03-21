@@ -4,7 +4,7 @@
   text-align: center;
   border-radius: 15px;
   background-color: #e67812;
-  padding: 5%;
+  padding: 4%;
   margin: auto;
 }
 
@@ -46,7 +46,7 @@
     text-align: center;
     color: rgb(15, 15, 15);
     background-color: #e67812;
-    width: 40%;
+    width: 38%;
     text-align: center;
     margin: auto;
     border-radius: 15px;
@@ -56,18 +56,6 @@
 body{
     background-image: url("/images/inventory.jpg");
     background-size: cover;
-}
-
-.row .sign-up{
-    width: 100%;
-    padding: 1.5%;
-    margin: auto;
-    display: inline-block;
-    border:1px solid #ccc;
-    border-radius: 7px;
-    box-sizing: border-box;
-    background-color: rgb(62, 240, 77);
-    cursor: pointer;
 }
 
 form i {
