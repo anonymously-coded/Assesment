@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles/login.css">
+    <script src="/scripts/login.js"></script>
+    <title>Login Page</title>
+</head>
+
+<body id="body" class="body">
+    <div id="h1" class="h1">
+        <h1>Login Page</h1>
+    </div>
+    <div class="container">
+        <div class="sign-in">
+            <h3 class="h3">Sign In</h3>
+        </div>
+        <form name="login-form" class="form">
+            <div class="row">
+                <div class="label-control">
+                    <label for="uname">Username</label>
+                </div>
+                <div class="label-box">
+                    <input class="input-control" type="text" id="uname" name="uname" placeholder="Enter your username"
+                        maxlenght="20" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="label-control">
+                    <label for="pwd">Password</label>
+                </div>
+                <div class="label-box">
+                    <input class="input-control" type="password" id="pwd" name="pwd" placeholder="Enter your password"
+                        required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="label-box">
+                    <button type="submit" class="submit-btn">Sign In</button>
+                </div>
+            </div>
+            <div class="check-and-forgot">
+                <span class="checkbox">
+                    <label class="checkbox-label">Remember Me
+                        <span class="checkmark"></span>
+                        <input type="checkbox" checked>
+                    </label>
+                </span>
+                <span  class="forgot-password">
+                    <a href="#">Forgot Password</a>
+                </span>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+
+.container {
+    width: 30%;
+  text-align: center;
+  border-radius: 15px;
+  background-color: #e67812;
+  padding: 20px;
+  margin: auto;
+}
+
+.container .label-control {
+    text-align: left;
+    margin: auto;
+    padding: 7px;
+}
+
+.input-control {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.label-box .submit-btn{
+    width: 100%;
+    padding: 10px 15px;
+    margin: 4px 0;
+    display: inline-block;
+    border:1px solid #ccc;
+    border-radius: 7px;
+    box-sizing: border-box;
+    background-color: rgb(62, 240, 77);
+    cursor: pointer;
+    
+}
+
+.submit-btn :hover{
+    background-color: aqua;
+}
+
+.h1 { 
+    font-family: Arial,Helvetica,sans-serif; 
+    text-align: center;
+    color: rgb(75, 34, 224);
+    
+}
+
+body{
+    background-image: url("/images/inventory.jpg");
+    background-size: cover;
+}
