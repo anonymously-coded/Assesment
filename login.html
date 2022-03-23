@@ -6,63 +6,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/styles/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <script src="/scripts/login.js"></script>
     <title>Login Page</title>
 </head>
 
 <body id="body" class="body">
-    <div id="h1" class="h1">
-        <h1>Login Page</h1>
-    </div>
-    <div class="container">
-        <div class="sign-in">
-            <h3 class="h3">Sign In</h3>
-        </div>
-        <form name="login-form" class="form">
-            <div class="row">
-                <div class="label-control">
-                    <label for="uname">Username</label>
-                </div>
-                <div class="label-box">
-                    <input class="input-control" type="text" id="uname" name="uname" placeholder="Enter your username"
-                        maxlenght="20" required>
-                </div>
+    <div class="full-container">
+        <div class="container">
+            <div class="sign-in">
+                <h3 class="h3">Sign In</h3>
             </div>
-            <div class="row">
-                <div class="label-control">
-                    <label for="pwd">Password</label>
+            <form name="login-form" class="form" action="/pages/Home.html">
+                <div class="row">
+                    <div class="label-control">
+                        <label for="uname">Username</label>
+                    </div>
+                    <div class="label-box">
+                        <input class="input-control" type="text" id="uname" name="uname"
+                            placeholder="Enter your username" maxlenght="20" onblur="validateUserName()" required>
+                        <i class="bi bi-person-circle" id="input-icons"></i>
+                        <span class="hidden" id="userNameId">Entered username is not valid</span>
+                    </div>
                 </div>
-                <div class="label-box">
-                    <input class="input-control" type="password" id="pwd" name="pwd" placeholder="Enter your password"
-                        required>
+                <div class="row">
+                    <div class="label-control">
+                        <label for="pwd">Password</label>
+                    </div>
+                    <div class="label-box">
+                        <input class="input-control" type="password" id="pwd" name="pwd"
+                            placeholder="Enter your password" onblur="validatePassword()" required>
                         <i class="bi bi-eye-slash" id="togglePassword" onclick="passwordToggle()"></i>
+                        <span class="hidden" id="passwordId">Enter your password in the requested format</span>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="label-box">
-                    <button type="submit" class="submit-btn">Sign In</button>
+                <div class="row">
+                    <div class="label-box">
+                        <button type="submit" class="submit-btn" onclick="validateLogin()">Sign In</button>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="sign-up">
-                    <a href="/pages/Registration.html">Sign Up</a>
+                <div class="row">
+                    <div class="sign-up" onclick="redirectPage()">
+                        <a href="/pages/Registration.html">Sign Up</a>
+                    </div>
                 </div>
-            </div>
-            <br>
-            <br>
-            <div class="check-and-forgot">
-                <span class="checkbox">
-                    <label class="checkbox-label">Remember Me
+                <br>
+                <br>
+                <div class="check-and-forgot">
+                    <span class="checkbox">
                         <span class="checkmark"></span>
                         <input type="checkbox" checked>
-                    </label>
-                </span>
-                <span  class="forgot-password">
-                    <a href="#">Forgot Password</a>
-                </span>
-            </div>
-        </form>
+                        <label class="checkbox-label">Remember Me</label>
+                    </span>
+                    <span class="forgot-password">
+                        <a href="#">Forgot Password</a>
+                    </span>
+                </div>
+            </form>
+        </div>
+        <div class="image-control">
+            <img src="/images/inventory.jpg" width="780px" height="740px" />
+        </div>
     </div>
 </body>
 
