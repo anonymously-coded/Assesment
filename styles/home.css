@@ -1,0 +1,154 @@
+.container .header{
+    width: 20%;     
+    background-color: rgb(29, 42, 53);
+    height: 100vh;
+    position: fixed;
+}
+
+.header .sidebar-button{
+    width : 90%;
+    display : block;
+    padding: 8px 16px;
+    text-align: left;
+    border: none;
+    white-space: normal;
+    float: none;
+    outline: 0;
+    text-decoration: none;
+    color: white;
+}
+
+.header .sidebar-button:hover{
+    background-color: white;
+    color: black;
+}
+.header .menu{
+    width : 90%;
+    display : block;
+    padding: 8px 16px;
+    text-align: left;
+    border: none;
+    white-space: normal;
+    float: none;
+    outline: 0;
+    text-decoration: none;
+    color: white;
+}
+
+.heading-bar .heading-bar-content{
+    width: 100%;
+    text-align: center;
+    background-color: rgb(29, 42, 53);
+    color: white;
+    margin: 0;
+    padding: 10px 0px;
+    position: fixed;
+}
+
+.heading-bar .heading-bar-button{
+    background-color: whitesmoke;
+    width: 2%;
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    top: 18px;
+
+}
+
+.body{
+    background-color: whitesmoke;
+    font-family: Verdana,sans-serif;
+    margin: 0;
+}
+
+#addButton{
+    width: 60px;
+    height: 20px;
+    position: fixed;
+    right: 5%;
+    top: 10%;
+    padding: 3px;
+    background-color: red;
+    cursor: pointer;
+    
+}
+
+.header{
+    position: relative;
+    top: -1px;
+}
+
+.form{
+    width: 30%;
+    background-color: rgb(40, 146, 160);
+    padding: 4%;
+    margin: auto;
+    height: 50%;
+}
+.form .label-control{
+    text-align: left;
+    margin: auto;
+    padding: 7px;
+    
+}
+
+.label-control .submitButton{
+    text-align: center;
+    margin: auto;
+    padding: 6px;
+    background-color: rgb(236, 138, 45);
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.label-control .submitButton:hover{
+    background-color: yellow;
+}
+
+.form .input-control {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+#noOfStock{
+    width: 30%;
+    padding: 10px 15px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+
+}
+
+#quantity{
+    width: 35%;
+    padding: 10px 15px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.label-in{
+    padding: 13px;
+    margin-left: 7%;
+}
+
+.header .header-button-close{
+    margin-left: 84%;
+    cursor: pointer;
+    background-color: whitesmoke;
+    margin-top: 6%;
+}
+
+.showForm{
+    display: none;
+}
+

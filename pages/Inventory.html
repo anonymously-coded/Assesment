@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles/inventory.css">
+    <script src="/scripts/inventory.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <title>Inventory Management</title>
+</head>
+
+<body class="body" id="body">
+    <div class="heading-bar">
+        <h2 class="heading-bar-content" style="top:0px;"><button onclick="openSideBar()"
+                class="heading-bar-button">☰</button>My Inventory
+        </h2>
+    </div>
+    <div class="container" id="container">
+        <div class="header" id="header">
+            <span>
+                <button class="header-button-close" onclick="closeSideBar()">X</button>
+                <h3 class="menu">Menu</h3>
+            </span>
+            <a href="/pages/Home.html" class="sidebar-button">Home</a>
+            <a href="/pages/Inventory.html" class="sidebar-button">My Inventory</a>
+            <a href="#" class="sidebar-button">Notifications</a>
+        </div>
+    </div>
+    <div class="addButton">
+        <button id="addButton" onclick="showHideFunction()">+ Add</button>
+    </div>
+    <div class="showForm" id="showForm">
+        <form id="form" class="form">
+            <div class="row">
+                <div class="label-control">
+                    <label for="item-provider">Item Provider :</label>
+                </div>
+                <select name="item-provider" id="item-provider" class="input-control" required>
+                    <option value="" selected="selected">Please select a manufacturor</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="label-control">
+                    <label for="item-name">Item Name :</label>
+                </div>
+                <select name="item-name" id="item-name" class="input-control" required>
+                    <option value="" selected="selected">Please select a product</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="label-control">
+                    <label for="noOfItems">Number of stocks</label>
+                </div>
+                <span><button onclick="decrement()">-</button></span>
+                <span></span><input class="input-control" id="noOfStock" name="noOfStock" type="number" min="1"
+                    max="100"></span>
+                <span></span><button onclick="increment()">+</button></span>
+                <span><label class="label-in">In :</label></span>
+                <span><select name="quantity" id="quantity" required>
+                        <option value="" selected="selected">Quantity</option>
+                    </select></span>
+            </div>
+            <div class="row">
+                <div class="label-control">
+                    <label for="deliverdDate">Date of Delivery :</label>
+                </div>
+                <input type="date" id="deliverdDate" name="deliverdDate" class="input-control">
+            </div>
+            <div class="row">
+                <div class="label-control">
+                    <label for="outOfStock">Expected date to go out of stock :(approx) </label>
+                </div>
+                <input type="date" id="outOfStock" name="outOfStock" class="input-control">
+            </div>
+            <div class="row">
+                <div class="label-control">
+                    <label for="manufacturingDate">Manufacturing Date :</label>
+                </div>
+                <input type="date" id="manufacturingDate" name="manufacturingDate" class="input-control">
+            </div>
+            <div class="row">
+                <div class="label-control">
+                    <label for="contactPerson">Contact Person :</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="contactPerson" class="input-control" name="contactPerson" min="2" max="30"
+                        required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="label-control">
+                    <label for="contactNumber">Contact number of the person :</label>
+                </div>
+                <input type="text" id="contactNumber" name="contactNumber" class="input-control" maxlength="10"
+                    required>
+            </div>
+            <div class="row">
+                <div class="label-control">
+                    <label for="addressOfManufacturor">Address of the manufacturor :</label>
+                </div>
+                <textarea id="addressOfManufacturor" name="addressOfManufacturor" rows="6" cols="59"
+                    required></textarea>
+            </div>
+            <div class="row">
+                <div class="label-control">
+                    <button type="submit" class="submitButton" onclick="validateForm()">Add Data</button>
+                    <button type="button" class="submitButton" onclick="closeForm()">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="cardHolder" id="cardHolder">
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <h3>Coffee Bean</h3>
+                    <img src="/images/coffeeBean.png" width="80px" height="80px">
+                    <p>Iteam Provider : Coffee day</p>
+                    <p>In stock : 10 Kg</p>
+                    <p>Contact Person : xxx</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <h3>Sugar</h3>
+                    <img src="/images/sugar.jpg" width="80px" height="80px">
+                    <p>Iteam Provider : Coffee day</p>
+                    <p>In stock : 10 Kg</p>
+                    <p>Contact Person : xxx</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <h3>Toned Milk</h3>
+                    <img src="/images/tonedMilk.jpg" width="80px" height="80px">
+                    <p>Iteam Provider : Coffee day</p>
+                    <p>In stock : 10 Ltr</p>
+                    <p>Contact Person : xxx</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <h3>Tea Bags</h3>
+                    <img src="/images/teaBag.jpg" width="80px" height="80px">
+                    <p>Iteam Provider : Coffee day</p>
+                    <p>In stock : 5 Boxes(500 pcs)</p>
+                    <p>Contact Person : xxx</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <h3>Water Can</h3>
+                    <img src="/images/waterCan.png" width="80px" height="80px">
+                    <p>Iteam Provider : Amman Water Supply</p>
+                    <p>In stock : 10 can(s)</p>
+                    <p>Contact Person : yyy</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

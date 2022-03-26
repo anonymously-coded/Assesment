@@ -1,11 +1,11 @@
 
 .container {
-    width: 30%;
+    width: 43%;
   text-align: center;
-  border-radius: 15px;
-  background-color: #e67812;
+  background-color: rgb(64,156,141);;
   padding: 4%;
   margin: auto;
+  height: 620px;
 }
 
 .container .label-control {
@@ -37,28 +37,32 @@
     
 }
 
-.submit-btn :hover{
-    background-color: aqua;
-}
-
-.h1 { 
-    font-family: Arial,Helvetica,sans-serif; 
-    text-align: center;
-    color: rgb(15, 15, 15);
-    background-color: #e67812;
-    width: 38%;
-    text-align: center;
-    margin: auto;
-    border-radius: 15px;
-    
+.submit-btn:hover{
+    background-color: yellow;
 }
 
 body{
-    background-image: url("/images/inventory.jpg");
-    background-size: cover;
+    background-color: black;
+    font-family: 'Lato', sans-serif;
 }
 
 form i {
     margin-left: -28px;
     cursor: pointer;
+    color: black;
+}
+
+.hidden{
+    display: none;
+}
+
+.full-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.show-msg{
+    color: yellow;
+    font-family: 'Times New Roman', Times, serif;
 }
