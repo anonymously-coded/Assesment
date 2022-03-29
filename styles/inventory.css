@@ -4,7 +4,7 @@
 
 .container .header{
     width: 20%;     
-    background-color: rgb(29, 42, 53);
+    background-color: #0D1721;
     height: 100vh;
     position: fixed;
 }
@@ -60,21 +60,9 @@
 }
 
 .body{
-    background-color: lightblue;
+    background-color: #cedce7;
     font-family: Verdana,sans-serif;
     margin: 0;
-}
-
-#addButton{
-    width: 60px;
-    height: 20px;
-    position: fixed;
-    right: 5%;
-    top: 10%;
-    padding: 3px;
-    background-color: red;
-    cursor: pointer;
-    
 }
 
 .header{
@@ -82,13 +70,23 @@
     top: -1px;
 }
 
+.showForm{
+    display: none;
+    position: absolute;
+    width: 100%;
+    margin-top: 15px;
+    z-index: 5;
+    background-color: rgba(110, 104, 104, 0.8);
+}
+
 .form{
     width: 30%;
-    background-color: rgb(40, 146, 160);
+    background-color: rgb(196, 220, 223);
     padding: 4%;
     margin: auto;
-    height: 50%;
     margin-top: 65px;
+    border: 2px solid black;
+    margin-bottom: 50px;
 }
 .form .label-control{
     text-align: left;
@@ -101,13 +99,13 @@
     text-align: center;
     margin: auto;
     padding: 6px;
-    background-color: rgb(236, 138, 45);
+    background-color: #007BFF;
     cursor: pointer;
     border: 2px solid black;
 }
 
 .label-control .submitButton:hover{
-    background-color: yellow;
+    background-color: rgb(29, 71, 148);
 }
 
 .form .input-control {
@@ -153,50 +151,119 @@
     margin-top: 6%;
 }
 
-.showForm{
-    display: none;
+.cardHolder {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px;
 }
 
-.cardHolder{
-    margin-left: 40px;
-    margin-top: 70px;
-}
 
-.cardHolder .column {
-    float: left;
-    width: 25%;
-    padding: 0 10px;
-  }
-
-.cardHolder .row {
-    margin: 0 -5px;
-}
-
-.cardHolder .row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-@media screen and (max-width: 600px) {
-    .cardHolder .column {
-      width: 100%;
-      display: block;
-      margin-bottom: 20px;
-    }
-}
-
-.cardHolder .card {
-    width: 25%;
-    float: left;
+.cardHolder .card {   
+    width: 200px;
+    height: 200px; 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
     text-align: center;
-    background-color: #B1CBBB;
+    background-color: rgb(65, 63, 63);
+    margin: 5px;
+    margin-left: 20px;
+    opacity: 0.8;
   }
 
+.cardHolder .cardInner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.cardHolder .card:hover .cardInner{
+    transform: rotateY(180deg);
+    opacity: 1;
+    transition: .9s;
+    background-color: #2D728F;
+}
+
+.cardHolder .cardBack{
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.cardHolder .cardFront, .cardBack{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
 
 
-.cardHolder{
-    box-sizing: border-box;
+.add-button-container{
+    width: 100%;
+    height: 10vh;
+    position: relative;
+    top: 50px;
+}
+
+.add-button-container .add-button{
+    width: 60px;
+    height: 20px;
+    top: 10px;
+    margin-left: 95%;
+    background-color: red;
+    cursor: pointer;
+    position: sticky;
+    z-index: 10;
+}
+
+form i {
+    margin-left: -40px;
+    cursor: pointer;
+    color: black;
+}
+
+.hidden{
+    display: none;
+}
+
+@media (min-width: 1800px), (max-width: 2000px) {
+    .cardHolder{
+        margin-left: 20%;
+    }
+    
+    .cardHolder .card{
+        margin-left: 5%;
+    }
+}
+
+@media (min-width: 2001px), (max-width: 2560px){
+    .cardHolder{
+        margin: 30px
+    }
+    
+    .cardHolder .card{
+        margin-left: 10%;
+    }
+
+    .addressOfManufacturor{
+        width:  98%;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 1458px){
+    .label-in{
+        margin-left: -2%;
+    }
+}
+
+.heading-bar i{
+    margin-left: -40px;
+    cursor: pointer;
+    color: rgb(241, 234, 234);
 }

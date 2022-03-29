@@ -1,3 +1,7 @@
+.container{
+    display: none;
+}
+
 .container .header{
     width: 20%;     
     background-color: rgb(29, 42, 53);
@@ -56,21 +60,9 @@
 }
 
 .body{
-    background-color: whitesmoke;
+    background-color: lightblue;
     font-family: Verdana,sans-serif;
     margin: 0;
-}
-
-#addButton{
-    width: 60px;
-    height: 20px;
-    position: fixed;
-    right: 5%;
-    top: 10%;
-    padding: 3px;
-    background-color: red;
-    cursor: pointer;
-    
 }
 
 .header{
@@ -78,12 +70,23 @@
     top: -1px;
 }
 
+.showForm{
+    display: none;
+    position: absolute;
+    width: 100%;
+    margin-top: 15px;
+    z-index: 5;
+    background-color: rgba(110, 104, 104, 0.8);
+}
+
 .form{
     width: 30%;
-    background-color: rgb(40, 146, 160);
+    background-color: rgb(196, 220, 223);
     padding: 4%;
     margin: auto;
-    height: 50%;
+    margin-top: 65px;
+    border: 2px solid black;
+    margin-bottom: 50px;
 }
 .form .label-control{
     text-align: left;
@@ -96,13 +99,13 @@
     text-align: center;
     margin: auto;
     padding: 6px;
-    background-color: rgb(236, 138, 45);
+    background-color: #007BFF;
     cursor: pointer;
     border: 2px solid black;
 }
 
 .label-control .submitButton:hover{
-    background-color: yellow;
+    background-color: rgb(29, 71, 148);
 }
 
 .form .input-control {
@@ -148,7 +151,31 @@
     margin-top: 6%;
 }
 
-.showForm{
+.add-button-container{
+    width: 100%;
+    height: 10vh;
+    position: relative;
+    top: 50px;
+}
+
+.add-button-container .add-button{
+    width: 60px;
+    height: 20px;
+    top: 10px;
+    margin-left: 95%;
+    background-color: red;
+    cursor: pointer;
+    position: sticky;
+    z-index: 10;
+}
+
+form i {
+    margin-left: -40px;
+    cursor: pointer;
+    color: black;
+}
+
+.hidden{
     display: none;
 }
 
