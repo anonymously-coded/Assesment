@@ -19,8 +19,8 @@ function validateName(){
         nameInputId.style.borderColor = "black";
     }else{
         nameId.classList.remove("hidden");
-        nameId.style.color = "red"; 
-        nameInputId.style.borderColor = "red";
+        nameId.style.color = "black"; 
+        nameInputId.style.borderColor = "black";
     }
 }
 
@@ -32,7 +32,7 @@ function validateUserName(){
         userNameId.classList.add("hidden");
     } else {
         userNameId.classList.remove("hidden");
-        userNameId.style.color = "red";
+        userNameId.style.color = "black";
     }
 }
 
@@ -44,7 +44,7 @@ function validateEmail(){
         emailId.classList.add("hidden");
     }else{
         emailId.classList.remove("hidden");
-        emailId.style.color = "red";
+        emailId.style.color = "black";
     }
 }
 
@@ -56,7 +56,7 @@ function validatePassword(){
         passwordId.classList.add("hidden");
     }else{
         passwordId.classList.remove("hidden");
-        passwordId.style.color = "red";
+        passwordId.style.color = "black";
     }
 }
 
@@ -68,20 +68,20 @@ function validateConfirmPassword(){
         confPasswordId.classList.add("hidden");
     }else{
         confPasswordId.classList.remove("hidden");
-        confPasswordId.style.color = "red";
+        confPasswordId.style.color = "black";
     }
 }
 
 function validateForm(){
-    var passwordId = document.getElementById("pwd").value;
-    var confPasswordValue = document.getElementById("con_ped").value;
+    var passwordValue = document.getElementById("pwd").value;
+    var confPasswordValue = document.getElementById("con_pwd").value;
     var confPasswordId = document.getElementById("confPasswordId");
     if(confPasswordValue == passwordValue){
         alert("Registration success!!!");
-        var url = new URL("http://127.0.0.1:5500/login.html");
+        var url = new URL("http://127.0.0.1:5501/pages/login.html");
         window.location.href = url;
         }else {
         confPasswordId.classList.remove("hidden");
-        confPasswordId.style.color = "red";
+        confPasswordId.style.color = "black";
     }
 }

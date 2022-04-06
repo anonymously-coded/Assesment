@@ -89,3 +89,8 @@ form i {
 .hidden{
     display: none;
 }
+
+.show-msg{
+    color: yellow;
+    font-family: 'Times New Roman', Times, serif;
+}

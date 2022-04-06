@@ -36,6 +36,7 @@ function getMethod() {
     const xhttp  = new XMLHttpRequest();
     xhttp.open("GET","https://gorest.co.in/public/v2/users",true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.setRequestHeader("Authorization", "Bearer 1156537194da85c9d32b3e3044bb1ceebe35c2fdca9e34b7abf798e99775f9fc")
     xhttp.send();
     xhttp.onload = function () {
         console.log(this)
@@ -56,7 +57,7 @@ function getMethod() {
                     var idValues = iteratingDivElements[iteratorTwo].id;
                     iteratingDivElements[iteratorTwo].value = request[iterator][idValues];
                 }
-                document.getElementsByClassName("cardContainer")[0].appendChild(divElement);
+                document.getElementsByClassName("card-container")[0].appendChild(divElement);
             }
         }else {
             alert("Check status and state!!!"); 
@@ -109,6 +110,7 @@ function editData(element) {
     var url = "https://gorest.co.in/public/v2/users/"
     var newUrl = url + element.parentElement.getElementsByTagName("input")[0].value;
     xhttp.open("GET", newUrl, true);
+    xhttp.setRequestHeader("Authorization", "Bearer 1156537194da85c9d32b3e3044bb1ceebe35c2fdca9e34b7abf798e99775f9fc");
     xhttp.send();
 
     function getDataFromCard(response){

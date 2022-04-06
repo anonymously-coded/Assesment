@@ -29,11 +29,18 @@
             <a href="/pages/CRUD.html" class="sidebar-button">CRUD</a>
         </div>
     </div>
-    <div class="mainContainer">
+    <div class="main-container">
+        <div class="welcome-title">
+            <h2>Welcome!!!</h3>
+            <h3>Click "My Inventory" in sidebar to view your inventory</h2>
+        </div>
+        <div class="pie-chart-img">
+            <img src="/images/piechart.jpg" alt="Couldn't load image!" width="500px" height="400px">
+        </div>
         
-        <div class="showForm" id="showForm">
+        <div class="show-form" id="showForm">
             <form id="form" class="form">
-                <div class="cancelIcon">
+                <div class="cancel-icon">
                     <i class="bi bi-x-circle-fill" onclick="hideForm()"></i>
                 </div>
                 <div class="row">
@@ -106,8 +113,8 @@
                 </div>
                 <div class="row">
                     <div class="label-control">
-                        <button type="submit" class="submitButton" onclick="validateForm()">Add Data</button>
-                        <button type="button" class="submitButton" onclick="closeForm()">Cancel</button>
+                        <button type="submit" class="submit-button" onclick="validateForm()">Add Data</button>
+                        <button type="button" class="submit-button" onclick="closeForm()">Cancel</button>
                     </div>
                 </div>
             </form>

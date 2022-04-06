@@ -80,7 +80,7 @@
     top: -1px;
 }
 
-.showForm{
+.show-form{
     display: none;
     position: absolute;
     width: 100%;
@@ -104,12 +104,12 @@
     
 }
 
-.form .cancelIcon{
+.form .cancel-icon{
     margin-left: 368px;
     margin-top: -13px;
 }
 
-.label-control .submitButton{
+.label-control .submit-button{
     text-align: center;
     margin: auto;
     padding: 6px;
@@ -118,7 +118,7 @@
     border: 2px solid black;
 }
 
-.label-control .submitButton:hover{
+.label-control .submit-button:hover{
     background-color: rgb(29, 71, 148);
 }
 
@@ -165,7 +165,7 @@
     margin-top: 6%;
 }
 
- .mainContainer .cardHolder {
+ .mainContainer .card-holder {
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
@@ -176,7 +176,7 @@
 }
 
 
-.cardHolder .card {   
+.card-holder .card {   
     width: 200px;
     height: 200px; 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -189,7 +189,7 @@
     position: relative;
   }
 
-.cardHolder .cardInner{
+.card-holder .card-inner{
     position: relative;
     width: 100%;
     height: 100%;
@@ -199,25 +199,31 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-.cardHolder .card:hover .cardInner{
+.card-holder .card:hover .card-inner{
     transform: rotateY(180deg);
     opacity: 1;
     transition: .9s;
     background-color: #2D728F;
 }
 
-.cardHolder .cardBack{
+.card-holder .card-back{
     background-color: #2980b9;
     color: white;
     transform: rotateY(180deg);
 }
 
-.cardHolder .cardFront, .cardBack{
+.card-holder .card-front, .card-back{
     position: absolute;
     width: 100%;
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+}
+
+.card-back h3, .card-back p{
+    color: black;
+    text-align: left;
+    font-family :Georgia, 'Times New Roman', Times, serif
 }
 
 
@@ -251,28 +257,28 @@ form i {
 }
 
  @media (min-width: 1800px), (max-width: 2000px) {
-    .cardHolder{
+    .card-holder{
         margin-left: 20%;
     }
     
-    .cardHolder .card{
+    .card-holder .card{
         margin-left: 5%;
     }
 }
 
 @media (min-width: 2001px), (max-width: 2560px){
-    .cardHolder{
+    .card-holder{
         margin: 30px;
         display: flex;
         margin-top: 70px;
     }
     
-    .cardHolder .card{
+    .card-holder .card{
         margin-left: 1%;
         margin-top: 1%;
     }
 
-    .addressOfManufacturor{
+    .address-of-manufacturor{
         width:  98%;
         border-radius: 10px;
     }

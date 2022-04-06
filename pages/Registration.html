@@ -23,7 +23,7 @@
             <div class="sign-in">
                 <h3 class="h3">Sign Up</h3>
             </div>
-            <form name="login-form" class="form" action="login.html">
+            <form name="login-form" class="form">
                 <div class="row">
                     <div class="label-control">
                         <label for="yname">Name :</label>
@@ -32,7 +32,7 @@
                         <input class="input-control" type="text" id="yname" name="yname" placeholder="Enter your name"
                             maxlenght="20" onblur="validateName()" required>
                         <i class="bi bi-person" id="input-icons"></i>
-                        <span class="hidden" id="nameId">Enter name only in characters.</span>
+                        <span class="hidden" id="nameId">**Enter name only in characters.</span>
                     </div>
                 </div>
                 <div class="row">
@@ -43,7 +43,7 @@
                         <input class="input-control" type="text" id="uname" name="uname"
                             placeholder="Enter your username" onblur="validateUserName()" required>
                         <i class="bi bi-person-circle"></i>
-                        <span class="hidden" id="userNameId">Entered username is not valid</span>
+                        <span class="hidden" id="userNameId">**Entered username is not valid</span>
                     </div>
                 </div>
                 <div class="row">
@@ -54,7 +54,7 @@
                         <input class="input-control" type="email" id="email" name="email"
                             placeholder="Enter your email address" onblur="validateEmail()" required>
                         <i class="bi bi-envelope-fill"></i>
-                        <span class="hidden" id="emailId">Should be in the format of characters@characters.domain</span>
+                        <span class="hidden" id="emailId">**Email should be in the format of characters@characters.domain</span>
                     </div>
                 </div>
                 <div class="row">
@@ -65,7 +65,7 @@
                         <input class="input-control" type="password" id="pwd" name="pwd"
                             placeholder="Enter your password" onblur="validatePassword()" required>
                         <i class="bi bi-eye-slash" id="togglePassword" onclick="passwordToggle()"></i>
-                        <span class="hidden" id="passwordId">Enter your password in the requested format</span>
+                        <span class="hidden" id="passwordId">**Please enter your password in the requested format</span>
                     </div>
                 </div>
                 <div class="row">
@@ -76,17 +76,17 @@
                         <input class="input-control" type="password" id="con_pwd" name="con_pwd"
                             placeholder="Re-Enter your password" onblur="validateConfirmPassword()" required>
                         <i class="bi bi-lock-fill"></i>
-                        <span class="hidden" id="confPasswordId">Your Password and Confirm password does not
+                        <span class="hidden" id="confPasswordId">**Your Password and Confirm password does not
                             match</span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="label-box">
-                        <button type="submit" class="submit-btn" onclick="validateForm()">Sign Up</button>
+                        <button type="button" class="submit-btn" onclick="validateForm()">Sign Up</button>
                     </div>
                 </div>
                 <div class="row">
-                    <a href="/login.html">Already have an account?</a>
+                    <a href="/pages/login.html">Already have an account?</a>
                 </div>
                 <span class="msg-show">Note : ** Use atleast one Capital letter, one small letter, one number and one
                     special character. Password should be atleast 8 to 16 character length.</span>

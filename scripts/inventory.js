@@ -79,7 +79,7 @@ function hideForm() {
 
 //to close the form and redirect it to the home page
 function closeForm () {
-    var url = new URL("http://127.0.0.1:5500/pages/Home.html");
+    var url = new URL("http://127.0.0.1:5501/pages/Inventory.html");
     window.location.href = url;
 }
 

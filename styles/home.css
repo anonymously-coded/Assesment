@@ -7,6 +7,7 @@
     background-color: rgb(29, 42, 53);
     height: 100vh;
     position: fixed;
+    z-index: 10;
 }
 
 .header .sidebar-button{
@@ -47,6 +48,7 @@
     margin: 0;
     padding: 10px 0px;
     position: fixed;
+    z-index: 10;
 }
 
 .heading-bar .heading-bar-button{
@@ -70,7 +72,7 @@
     top: -1px;
 }
 
-.showForm{
+.show-form{
     display: none;
     position: absolute;
     width: 100%;
@@ -94,7 +96,7 @@
     
 }
 
-.label-control .submitButton{
+.label-control .submit-button{
     text-align: center;
     margin: auto;
     padding: 6px;
@@ -103,7 +105,7 @@
     border: 2px solid black;
 }
 
-.label-control .submitButton:hover{
+.label-control .submit-button:hover{
     background-color: rgb(29, 71, 148);
 }
 
@@ -181,4 +183,21 @@ form i {
 .bi-x-circle-fill::before{
     position: relative;
     margin-left: 476px;
+}
+
+.welcome-title{
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 35%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.welcome-title h2, .welcome-title h3{
+    color: red;
+}
+.pie-chart-img{
+    position: absolute;
+    margin-top: 14%;
+    margin-left: 34.5%;
 }

@@ -7,7 +7,7 @@ function passwordToggle () {
     }
 
 function redirectPage () {
-    var url = new URL("http://127.0.0.1:5500/pages/Registration.html");
+    var url = new URL("http://127.0.0.1:5501/pages/Registration.html");
     window.location.href = url;
 }
 
@@ -19,7 +19,7 @@ function validateUserName() {
         userNameId.classList.add("hidden");
     }else {
         userNameId.classList.remove("hidden");
-        userNameId.style.color = "red";
+        userNameId.style.color = "black";
     }
 }
 
@@ -31,15 +31,19 @@ function validatePassword(){
         passwordId.classList.add("hidden");
     }else {
         passwordId.classList.remove("hidden");
-        passwordId.style.color = "red";
+        passwordId.style.color = "black";
     }
 }
 
 function validateLogin(){
-    var userNameValue = document.getElementById("unmae").value;
+    var passwordRegax = /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]{8,20}$/
+    var passwordId = document.getElementById("passwordId");
     var passwordValue = document.getElementById("pwd").value;
-    console.log(userNameValue,passwordValue)
-    if(userNameValue != '' && passwordValue != ''){
+    if (passwordRegax.test(passwordValue)){
+        passwordId.classList.add("hidden");
+    }else {
+        passwordId.classList.remove("hidden");
+        passwordId.style.color = "black";
         var url = new URL("http://127.0.0.1:5500/pages/Home.html");
         window.location.href = url;
     }
