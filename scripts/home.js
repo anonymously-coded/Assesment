@@ -58,11 +58,10 @@ function openSideBar(){
 //adding a eventlistener to hide and show the form
 function showHideFunction(){
     var formId = document.getElementById("showForm");
-    console.log('display ---------', formId.style.display + ' end');
-    if (formId.classList.contains("showForm")){
-        formId.classList.remove("showForm");
+    if (formId.style.display=='block'){
+        formId.style.display='none';
     } else {
-        formId.classList.add("showForm");
+        formId.style.display='block';
     }
 }
 
@@ -72,14 +71,9 @@ function closeForm () {
     window.location.href = url;
 }
 
-//Not worked code
-// function showHideFunction(){
-//     var formId = document.getElementById("showForm");
-//     console.log('display ---------', formId.style.display + ' end');
-//     if (formId.style.display === "none"){
-//         formId.classList.add("showForm");
-//     } else {
-//         formId.classList.remove("showForm");
-//     }
-// }
+function hideForm() {
+    var formId = document.getElementById("showForm");
+    formId.style.display = "none";
+}
+
 

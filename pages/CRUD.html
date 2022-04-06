@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles/CRUD.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <script src="/scripts/CRUD.js"></script>
+    <title>Inventory Management</title>
+</head>
+
+<body class="body" id="body" onload="getMethod()">
+    <div class="heading-bar">
+        <h2 class="heading-bar-content"><button onclick="openSideBar()" class="heading-bar-button">☰</button>My
+            Inventory
+        </h2>
+    </div>
+    <div class="container" id="container">
+        <div class="header" id="header">
+            <span>
+                <button class="header-button-close" onclick="closeSideBar()">X</button>
+                <h3 class="menu">Menu</h3>
+            </span>
+            <a href="/pages/Home.html" class="sidebar-button">Home</a>
+            <a href="/pages/Inventory.html" class="sidebar-button">My Inventory</a>
+            <a href="#" class="sidebar-button">Notifications</a>
+            <a href="/pages/CRUD.html" class="sidebar-button">CRUD</a>
+        </div>
+    </div>
+    <div class="mainContainer" id="mainContainer">
+        <div class="cardContainer" id="cardContainer">
+            <div class="card" id="card">
+                <div class="dataContainer">
+                    <label class="label-control">ID :</label>
+                    <input type="text" id="id" class="input-control">
+                    <label class="label-control">Name :</label>
+                    <input type="text" id="name" class="input-control">
+                    <label class="label-control">Email :</label>
+                    <input type="email" id="email" class="input-control">
+                    <label class="label-control">Gender :</label>
+                    <input type="text" id="gender" class="input-control">
+                    <button type="button" id="editButton" class="edit-button" onclick="editData(this)">Edit</button>
+                    <button type="button" id="deleteButton" class="delete-button" onclick="removeData(this)">Delete</button>
+                </div>
+            </div>
+        </div>
+        <div class="showForm" id="showForm">
+            <form id="createDataForm" class="form">
+                <div class="cancelIcon">
+                    <i class="bi bi-x-circle-fill" onclick="hideForm()"></i>
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <label>Name :</label>
+                    </div>
+                    <input type="text" id="enterName" name="enterName" class="input-control" maxlength="20" required
+                        placeholder="Enter your name">
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <label>Email :</label>
+                    </div>
+                    <input type="email" id="enterEmail" name="enterEmail" class="input-control" required
+                        placeholder="Enter your email" required>
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <label>Gender</label>
+                    </div>
+                    <input type="radio" value="male" id="radio_btn" name="radio_btn"><label>Male</label>
+                    <input type="radio" value="female" id="radio_btn" name="radio_btn"><label>Female</label>
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <button type="button" class="submitButton" onclick="sendData()" id="submitButton">Submit</button>
+                        <button type="button" class="submitButton" onclick="hideForm()">Close</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="show-form-two" id="showFormTwo">
+            <form id="editDataForm" class="form">
+                <div class="cancelIcon">
+                    <i class="bi bi-x-circle-fill" onclick="hideFormTwo()"></i>
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <label>ID :</label>
+                    </div>
+                    <input type="text" id="enterId" name="enterId" class="input-control" readonly>
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <label>Name :</label>
+                    </div>
+                    <input type="text" id="enterName" name="enterName" class="input-control" maxlength="20" required
+                        placeholder="Enter your name">
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <label>Email :</label>
+                    </div>
+                    <input type="email" id="enterEmail" name="enterEmail" class="input-control" required
+                        placeholder="Enter your email" required>
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <label>Gender</label>
+                    </div>
+                    <input type="radio" value="male" id="radio_btn" name="radio_btn"><label>Male</label>
+                    <input type="radio" value="female" id="radio_btn" name="radio_btn"><label>Female</label>
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <button type="button" class="submitButton" onclick="updateData(this)" id="submitButton">Update</button>
+                        <button type="button" class="submitButton" onclick="hideFormTwo()">Close</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <div class="add-button-container">
+        <button id="addButton" class="add-button" onclick="showHideFunction()">Add Item</button>
+    </div>
+    </div>
+
+</body>
+
+</html>

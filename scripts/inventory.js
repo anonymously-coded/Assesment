@@ -51,6 +51,7 @@ function closeSideBar(){
     var contentMover = document.getElementById("cardHolder");
     contentMover.style.marginLeft = "40px";
     contentMover.style.marginTop  ="70px";
+
 }
 
 function openSideBar(){
@@ -64,11 +65,16 @@ function openSideBar(){
 //adding a eventlistener to hide and show the form
 function showHideFunction(){
     var formId = document.getElementById("showForm");
-    if (formId.classList.contains("showForm")){
-        formId.classList.remove("showForm");
+    if (formId.style.display=='block'){
+        formId.style.display='none'
     } else {
-        formId.classList.add("showForm");
+        formId.style.display='block'
     }
+}
+
+function hideForm() {
+    var formId = document.getElementById("showForm");
+    formId.style.display = "none";
 }
 
 //to close the form and redirect it to the home page
@@ -78,4 +84,89 @@ function closeForm () {
 }
 
 
+//validation -- drop down list box
+function focusEvent(){
+    var dropDownOne = document.getElementById("item-provider").value;
+    var dropDownTwo = document.getElementById("item-name");
+    if (dropDownOne != '') {
+        dropDownTwo.focus();
+    }
+}
+
+function focusEventTwo(){
+    var dropDownTwo = document.getElementById("item-name").value;
+    var dropDownThree = document.getElementById("quantity");
+    if (dropDownTwo != ''){
+        dropDownThree.focus();
+    }
+}
+
+function validateName(){
+    console.log("checking validation")
+    var nameRegex = /^[A-Za-z]{1,15}$/
+    var nameId = document.getElementById("nameId");
+    var nameValue = document.getElementById("contactPerson").value;
+    var nameInputId = document.getElementById("contactPerson"); 
+    console.log(nameValue.match(nameRegex))
+    
+    if(nameRegex.test(nameValue)){
+        nameId.classList.add("hidden");
+        nameInputId.style.borderColor = "black";
+    }else{
+        nameId.classList.remove("hidden");
+        nameId.style.color = "red"; 
+        nameInputId.style.borderColor = "red";
+    }
+}
+
+function validatePhoneNumber() {
+    var phoneRegex = /^\d{10}$/
+    var phoneId = document.getElementById("phoneId");
+    var phoneValue = document.getElementById("contactNumber").value;
+    var phoneInputId  =document.getElementById("contactNumber");
+     
+    if(phoneRegex.test(phoneValue)){
+        phoneId.classList.add("hidden");
+        phoneInputId.style.borderColor  ="black";
+    }else{
+        phoneId.classList.remove("hidden");
+        phoneId.style.color = "red";
+        phoneInputId.style.borderColor = "red";
+    }
+}
+
+function validateDeliveryDate () {
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementsByName("deliverdDate")[0].setAttribute('min', today);
+}
+
+function validateExpectedDate(){
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementsByName("outOfStock")[0].setAttribute('min', today);
+}
+
+function validateManufacturingDate(){
+    var today = new Date();
+    var date = today.getDate();
+    var month = today.getMonth() + 1;
+    var year = today.getFullYear();
+    if (date < 10){
+        date = "0" + date;
+    }
+    if (month < 10){
+        month = "0" + month;
+    }
+    var constructDate = year + "-" + month + "-" + date ;
+
+    var beforeSixMonth = today.getMonth() - 5;
+    var constructMinDate = year + "-" + beforeSixMonth + "-" + date;
+    document.getElementById("manufacturingDate").setAttribute("max",constructDate);
+    document.getElementById("manufacturingDate").setAttribute("min",constructMinDate);
+}
+
+
+function redirect(){
+    var url = new URL("http://127.0.0.1:5501/pages/result.html");
+    window.location.href = url;
+}
 
