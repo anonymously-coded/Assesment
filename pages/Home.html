@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/styles/home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <script src="/scripts/home.js"></script>
     <title>Inventory Management</title>
 </head>
@@ -25,14 +26,16 @@
             <a href="/pages/Home.html" class="sidebar-button">Home</a>
             <a href="/pages/Inventory.html" class="sidebar-button">My Inventory</a>
             <a href="#" class="sidebar-button">Notifications</a>
+            <a href="/pages/CRUD.html" class="sidebar-button">CRUD</a>
         </div>
     </div>
     <div class="mainContainer">
-        <div class="add-button-container">
-            <button id="addButton" class="add-button" onclick="showHideFunction()">+ Add</button>
-        </div>
+        
         <div class="showForm" id="showForm">
             <form id="form" class="form">
+                <div class="cancelIcon">
+                    <i class="bi bi-x-circle-fill" onclick="hideForm()"></i>
+                </div>
                 <div class="row">
                     <div class="label-control">
                         <label for="item-provider">Item Provider :</label>
@@ -109,6 +112,9 @@
                 </div>
             </form>
         </div>
+    </div>
+    <div class="add-button-container">
+        <button id="addButton" class="add-button" onclick="showHideFunction()">Add Item</button>
     </div>
 
 </body>

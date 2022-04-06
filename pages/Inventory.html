@@ -16,7 +16,7 @@
         <h2 class="heading-bar-content" style="top:0px;"><button onclick="openSideBar()"
                 class="heading-bar-button">☰</button>My Inventory
         </h2>
-        
+
     </div>
     <div class="container" id="container">
         <div class="header" id="header">
@@ -27,14 +27,96 @@
             <a href="/pages/Home.html" class="sidebar-button">Home</a>
             <a href="/pages/Inventory.html" class="sidebar-button">My Inventory</a>
             <a href="#" class="sidebar-button">Notifications</a>
+            <a href="/pages/CRUD.html" class="sidebar-button">CRUD</a>
         </div>
     </div>
     <div class="mainContainer">
-        <div class="add-button-container">
-            <button id="addButton" class="add-button" onclick="showHideFunction()">+ Add</button>
+        <div class="cardHolder" id="cardHolder">
+
+            <div class="card">
+                <div class="cardInner">
+                    <div class="cardFront">
+                        <img src="/images/coffeeBean.png" width="200px" height="200px"
+                            alt="No preview available for this image">
+                    </div>
+                    <div class="cardBack">
+                        <h3>Coffee Bean</h3>
+                        <p>Iteam Provider : Coffee day</p>
+                        <p>In stock : 10 Kg</p>
+                        <p>Contact Person : xxx</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="cardInner">
+                    <div class="cardFront">
+                        <img src="/images/sugar.jpg" width="200px" height="200px"
+                            alt="No preview available for this image">
+                    </div>
+                    <div class="cardBack">
+                        <h3>Sugar</h3>
+                        <p>Iteam Provider : Coffee day</p>
+                        <p>In stock : 10 Kg</p>
+                        <p>Contact Person : xxx</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="cardInner">
+                    <div class="cardFront">
+                        <img src="/images/tonedMilk.jpg" width="200px" height="200px"
+                            alt="No preview available for this image">
+                    </div>
+                    <div class="cardBack">
+                        <h3>Toned Milk</h3>
+                        <p>Iteam Provider : Coffee day</p>
+                        <p>In stock : 10 Ltr</p>
+                        <p>Contact Person : xxx</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="cardInner">
+                    <div class="cardFront">
+                        <img src="/images/teaBag.jpg" width="200px" height="200px"
+                            alt="No preview available for this image">
+                    </div>
+                    <div class="cardBack">
+                        <h3>Tea Bags</h3>
+                        <p>Iteam Provider : Coffee day</p>
+                        <p>In stock : 5 Boxes(500 pcs)</p>
+                        <p>Contact Person : xxx</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="cardInner">
+                    <div class="cardFront">
+                        <img src="/images/waterCan.png" width="200px" height="200px"
+                            alt="No preview available for this image">
+                    </div>
+                    <div class="cardBack">
+                        <h3>water Can</h3>
+                        <p>Iteam Provider : Amman Water Supply</p>
+                        <p>In stock : 10 can(s)</p>
+                        <p>Contact Person : yyy</p>
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
+
         <div class="showForm" id="showForm">
             <form id="form" class="form">
+                <div class="cancelIcon">
+                    <i class="bi bi-x-circle-fill" onclick="hideForm()"></i>
+                </div>
                 <div class="row">
                     <div class="label-control">
                         <label for="item-provider">Item Provider :</label>
@@ -115,89 +197,16 @@
                 </div>
                 <div class="row">
                     <div class="label-control">
-                        <button type="submit" class="submitButton" onclick="validateForm()">Add Data</button>
+                        <button type="submit" class="submitButton" onclick="test()">Add Data</button>
                         <button type="button" class="submitButton" onclick="closeForm()">Cancel</button>
                     </div>
                 </div>
             </form>
-        </div>
-        <div class="cardHolder" id="cardHolder">
-
-            <div class="card">
-                <div class="cardInner">
-                    <div class="cardFront">
-                        <img src="/images/coffeeBean.png" width="200px" height="200px" alt="No preview available for this image">
-                    </div>
-                    <div class="cardBack">
-                        <h3>Coffee Bean</h3>
-                        <p>Iteam Provider : Coffee day</p>
-                        <p>In stock : 10 Kg</p>
-                        <p>Contact Person : xxx</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="cardInner">
-                    <div class="cardFront">
-                        <img src="/images/sugar.jpg" width="200px" height="200px" alt="No preview available for this image">
-                    </div>
-                    <div class="cardBack">
-                        <h3>Sugar</h3>
-                        <p>Iteam Provider : Coffee day</p>
-                        <p>In stock : 10 Kg</p>
-                        <p>Contact Person : xxx</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="cardInner">
-                    <div class="cardFront">
-                        <img src="/images/tonedMilk.jpg" width="200px" height="200px" alt="No preview available for this image">
-                    </div>
-                    <div class="cardBack">
-                        <h3>Toned Milk</h3>
-                        <p>Iteam Provider : Coffee day</p>
-                        <p>In stock : 10 Ltr</p>
-                        <p>Contact Person : xxx</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="cardInner">
-                    <div class="cardFront">
-                        <img src="/images/teaBag.jpg" width="200px" height="200px" alt="No preview available for this image">
-                    </div>
-                    <div class="cardBack">
-                        <h3>Tea Bags</h3>
-                        <p>Iteam Provider : Coffee day</p>
-                        <p>In stock : 5 Boxes(500 pcs)</p>
-                        <p>Contact Person : xxx</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="cardInner">
-                    <div class="cardFront">
-                        <img src="/images/waterCan.png" width="200px" height="200px" alt="No preview available for this image">
-                    </div>
-                    <div class="cardBack">
-                        <h3>water Can</h3>
-                        <p>Iteam Provider : Amman Water Supply</p>
-                        <p>In stock : 10 can(s)</p>
-                        <p>Contact Person : yyy</p>
-                    </div>
-                </div>
-            </div>
-
-            
-
-        </div>
+        </div>       
     </div>
-
+    <div class="add-button-container">
+        <button id="addButton" class="add-button" onclick="showHideFunction()">Add Item</button>
+    </div>
 </body>
 
 </html>

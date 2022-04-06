@@ -65,11 +65,16 @@ function openSideBar(){
 //adding a eventlistener to hide and show the form
 function showHideFunction(){
     var formId = document.getElementById("showForm");
-    if (formId.style.display=='none'){
-        formId.style.display='block'
-    } else {
+    if (formId.style.display=='block'){
         formId.style.display='none'
+    } else {
+        formId.style.display='block'
     }
+}
+
+function hideForm() {
+    var formId = document.getElementById("showForm");
+    formId.style.display = "none";
 }
 
 //to close the form and redirect it to the home page
@@ -141,10 +146,27 @@ function validateExpectedDate(){
 }
 
 function validateManufacturingDate(){
-    function addMonths(date, months) {
-        date.setMonth(date.getMonth() + months);
-        return date;
-      }
-    addMonths(new Date(), -5);
+    var today = new Date();
+    var date = today.getDate();
+    var month = today.getMonth() + 1;
+    var year = today.getFullYear();
+    if (date < 10){
+        date = "0" + date;
+    }
+    if (month < 10){
+        month = "0" + month;
+    }
+    var constructDate = year + "-" + month + "-" + date ;
 
+    var beforeSixMonth = today.getMonth() - 5;
+    var constructMinDate = year + "-" + beforeSixMonth + "-" + date;
+    document.getElementById("manufacturingDate").setAttribute("max",constructDate);
+    document.getElementById("manufacturingDate").setAttribute("min",constructMinDate);
 }
+
+
+function redirect(){
+    var url = new URL("http://127.0.0.1:5501/pages/result.html");
+    window.location.href = url;
+}
+

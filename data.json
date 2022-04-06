@@ -1,0 +1,5 @@
+{"formDetails":[
+    {"itemProvider":"Coffee Day", "itemName":"Sugar", "noOfStock":"10", "quantity":"Kg","dateOfDelivery":"2022-03-31","outOfStock":"2022-04-05","manufacturingDate":"2022-01-31","contactPerson":"Annachi","contactNumber":"8339233972","address":"Coimbatore"},
+    {"itemProvider":"Coffee Day", "itemName":"Toned Milk", "noOfStock":"20", "quantity":"Ltr","dateOfDelivery":"2022-03-31","outOfStock":"2022-04-05","manufacturingDate":"2022-01-31","contactPerson":"Riyan","contactNumber":"8339233972","address":"Coimbatore"},
+    {"itemProvider":"Amman Water Supply", "itemName":"Water Can", "noOfStock":"20", "quantity":"can(s)","dateOfDelivery":"2022-03-31","outOfStock":"2022-04-05","manufacturingDate":"2022-01-31","contactPerson":"Annachi","contactNumber":"8339233972","address":"Coimbatore"}
+]}

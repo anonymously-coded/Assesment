@@ -58,10 +58,10 @@ function openSideBar(){
 //adding a eventlistener to hide and show the form
 function showHideFunction(){
     var formId = document.getElementById("showForm");
-    if (formId.style.display=='none'){
-        formId.style.display='block';
-    } else {
+    if (formId.style.display=='block'){
         formId.style.display='none';
+    } else {
+        formId.style.display='block';
     }
 }
 
@@ -71,5 +71,9 @@ function closeForm () {
     window.location.href = url;
 }
 
+function hideForm() {
+    var formId = document.getElementById("showForm");
+    formId.style.display = "none";
+}
 
 
