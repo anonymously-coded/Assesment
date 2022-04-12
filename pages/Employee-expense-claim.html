@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/Employee-expense-claim.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap" rel="stylesheet">
+    <script src="../scripts/Employee-expense-claim.js"></script>
+    <title>Employee Expense Claim</title>
+</head>
+
+<body class="body" onload="loadDropDownData()">
+    <div class="heading-bar">
+        <h2 class="heading-bar-content">Employee Expense Claim
+        </h2>
+    </div>
+    <div class="main-container" id="mainContainer">
+        <div class="card-container" id="cardContainer">
+            <div class="card" id="card">
+                <div class="data-container" id="dataContainer">
+                    <label class="label-control" style="display: none;">ID :</label>
+                    <input type="text" id="id" class="input-control" style="display: none;">
+                    <label class="label-control">Employee :</label>
+                    <input type="text" id="empName" class="input-control">
+                    <label class="label-control">Expense Name :</label>
+                    <input type="text" id="expenseName" class="input-control">
+                    <label class="label-control">Payment Date :</label>
+                    <input type="text" id="paymentDate" class="input-control">
+                    <label class="label-control">Notes :</label>
+                    <input type="text" id="notes" class="input-control">
+                    <label class="label-control">Total :</label>
+                    <input type="text" id="amount" class="input-control">
+                    <label class="label-control">Currency :</label>
+                    <input type="text" id="currency" class="input-control">
+                    <br>
+                    <br>
+                    <button type="button" id="editButton" class="edit-button" onclick="showDataFromCard(this)">Edit</button>
+                    <button type="button" id="deleteButton" class="delete-button" onclick="removeData(this)">Delete</button>
+                    <br>
+                    <br>
+                    <button type="button" class="submit-button-accept">Accept</button>
+                    <button type="button" class="submit-button-reject">Reject</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="show-form" id="showForm">
+            <form id="createDataForm" class="form">
+                <div class="cancel-icon">
+                    <i class="bi bi-x-circle-fill" onclick="hideForm()"></i>
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <label for="employeeName">Employee :</label>
+                    </div>
+                    <select name="employeeName" id="employeeName" class="input-control" required onblur="empNameValidation()">
+                        required>
+                        <option value="" selected="selected">Select...</option>
+                    </select>
+                    <span class="hidden" id="employeeSpanId">**This feild cannot be empty!! Please fill out this feild.</span>
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <label for="expenseName">Expense Name :</label>
+                    </div>
+                    <input type="text" id="formExpenseName" name="expenseName" class="input-control" maxlength="50" 
+                        placeholder="Expense Name" onblur="expNameValidation()">
+                        <span class="hidden" id="expenseSpanId">**Please enter the expense name.... (Alphabets and numbers are allowed, spaces and special characters are not allowed!!!)</span>
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <label for="paymentType">Payment Type :</label>
+                    </div>
+                    <select name="paymentType" id="paymentType" class="input-control" onblur="paymentTypeValidation()">
+                        <option value="" selected="selected">Select...</option>
+                    </select>
+                    <span class="hidden" id="paymentTypeSpanId">**This feild cannot be empty!! Please fill out this feild.</span>
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <label for="paymentMethod">Payment Method :</label>
+                    </div>
+                    <select name="paymentMethod" id="paymentMethod" class="input-control" onblur="paymentMethodValidation()">
+                        <option value="" selected="selected">Select...</option>
+                    </select>
+                    <span class="hidden" id="paymentMethodSpanId">**This feild cannot be empty!! Please fill out this feild.</span>
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <label for="paymentDate">Payment Date :</label>
+                    </div>
+                    <input type="date" id="formPaymentDate" name="paymentDate" class="input-control" onblur="paymentDateValidation()">
+                    <span class="hidden" id="paymentDateSpanId">**This feild cannot be empty!! Please fill out this feild.</span>
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <label for="notes">Notes :</label>
+                    </div>
+                    <input type="text" id="notes" class="input-control" name="notes">
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <label for="total">Total :</label>
+                    </div>
+                    <input type="text" id="total" name="total" class="input-control" required placeholder="0.00" onblur="totalamountValidation()">
+                    <span class="hidden" id="totalSpanIdOne">**This feild should not be empty!!... Please Enter the Amount</span>
+                    <span class="hidden" id="totalSpanIdTwo">**Please Enter in the format of "0.00"</span>
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <label for="currency">Currency :</label>
+                    </div>
+                    <select name="currency" id="currencyMethod" class="input-control" onblur="currencyMethodValidation()">
+                        <option value="" selected="selected">Currency Type...</option>
+                    </select>
+                    <span class="hidden" id="currencyMethodSpanId">**This feild cannot be empty!! Please fill out this feild.</span>
+                </div>
+                <div class="check-box">
+                    <input type="checkbox" name="checkBox" id="checkBox" class="check-box-control">
+                    <label>Payout With Salary</label>
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <button type="button" class="submit-button" onclick="sendData()">Save</button>
+                        <button type="button" class="submit-button" onclick="hideForm()">Cancel</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="show-form-two" id="showFormTwo">
+            <form id="updateDataForm" class="form">
+                <div class="cancel-icon">
+                    <i class="bi bi-x-circle-fill" onclick="hideFormTwo()"></i>
+                </div>
+                <div class="row">
+                    <div class="label-control" style="display: none;">
+                        <label for="id">ID :</label>
+                    </div>
+                    <input type="text" name="idOfEmployee" id="idOfEmployee" class="input-control" style="display: none;">
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <label for="employeeName">Employee :</label>
+                    </div>
+                    <input type="text" name="employeeNameTwo" id="employeeNameTwo" class="input-control">
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <label for="expenseName">Expense Name :</label>
+                    </div>
+                    <input type="text" id="expenseNameTwo" name="expenseNameTwo" class="input-control">
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <label for="paymentDate">Payment Date :</label>
+                    </div>
+                    <input type="text" id="paymentDateTwo" name="paymentDateTwo" class="input-control">
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <label for="notes">Notes :</label>
+                    </div>
+                    <input type="text" id="notesTwo" class="input-control" name="notesTwo">
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <label for="total">Total :</label>
+                    </div>
+                    <input type="text" id="totalTwo" name="totalTwo" class="input-control" required>
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <label for="currency">Currency :</label>
+                    </div>
+                    <input type="text" name="currencyNameTwo" id="currencyNameTwo" class="input-control">
+                </div>
+                <div class="row">
+                    <div class="label-control">
+                        <button type="button" class="submit-button" onclick="updateData()">Update</button>
+                        <button type="button" class="submit-button" onclick="hideFormTwo()">Cancel</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="add-button-container">
+        <button id="showButton" class="show-button" onclick="showHideExpenses()">Show Expenses</button>
+        <button id="addButton" class="add-button" onclick="showHideFunction()">Add Expense</button>
+    </div>
+
+
+</body>
+
+</html>
