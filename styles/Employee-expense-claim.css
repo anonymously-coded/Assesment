@@ -194,9 +194,6 @@
     border: 2px solid black;
 }
 
-.card-container{
-    display: none;
-}
 
 @media (max-width:1440px){
     .add-button-container .show-button{

@@ -1,4 +1,4 @@
-document.cookie = "AccessToken=eyJraWQiOiJhZm5VVTd6STJzdk1ISEcydkl3eE44enlxU0NXck1NNSttUDUxYTZcL0Uydz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJhdWQiOiI3dDgwNzYzN3Q5bmdwYmI1ZHZrOWIwbXV0NSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6IjM0MjJjZDNjLTgyNTctNDI5Ny04MjM5LWJiZDg2M2ViYzU0ZiIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQ5NzM1Njk5LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtbm9ydGgtMS5hbWF6b25hd3MuY29tXC9ldS1ub3J0aC0xXzZzMGFMblZFRSIsImNvZ25pdG86dXNlcm5hbWUiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJleHAiOjE2NDk3NTEzNTMsImlhdCI6MTY0OTc0Nzc1MywiZW1haWwiOiJnb3V0aGFtQHppcml1cy5pbiJ9.VG2tTy4o1TVrI-QLBj4nR4jcZBdJXwOa0NVC2xfgRTZ7qWX-iQbIkIYahiFh4PziHk6UWHC0EMVq-MGh_P5jbu8EnmuNvYA42seWVkJzUQVRmWyBT106QqJ0fDlAAp2iU5LyxmIVDG1qojhL7jfSuI51GW_xq__uv-gXWoBIRAsbX0PCkokqMmKc7aLBZ-4n5hlv_wWW4L2efR0ZkfQ7gQlnOtf2ZjofPp33s6L_ZaVppk3jRz0pWauMu06gjLIgYBRYWvmwbkQMnW9JJFIpq3mPiuGAh-Zmai7rzWxaNQ4fSooTBxLQL4IPEnM5w0cWgZEONl9wVLOmb_u3uH6vxw";
+document.cookie = "AccessToken=eyJraWQiOiJhZm5VVTd6STJzdk1ISEcydkl3eE44enlxU0NXck1NNSttUDUxYTZcL0Uydz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJhdWQiOiI3dDgwNzYzN3Q5bmdwYmI1ZHZrOWIwbXV0NSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6ImJhYmJiZGQ2LWY1N2QtNDliYS04MzJmLWE0YTJjY2UwNDNjYSIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQ5ODI0NzkyLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtbm9ydGgtMS5hbWF6b25hd3MuY29tXC9ldS1ub3J0aC0xXzZzMGFMblZFRSIsImNvZ25pdG86dXNlcm5hbWUiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJleHAiOjE2NDk4NTY5NTAsImlhdCI6MTY0OTg1MzM1MCwiZW1haWwiOiJnb3V0aGFtQHppcml1cy5pbiJ9.ELLV0k0hIWboGfXWXRBUS0RMwQUabPXWku5tVi8ILfgLElW9SNfprtwm34sB0_dCfK9hC2Mt0Hc9Y0IMqlyrGADQVlLz6xg6LNZFBapZWyp9FAqRe0tPIbAnSduCiAh-MWMFdhGRNSUbbrDXm2jnN1CcBI0bn0m7D095mm69l71khYeou41XosBDFs8kik7YE7C3_Lyj4rTxF0MWl0U3n-TZgQhWNJobAh-220Q8FJdQ-Z0Lq7yKl_KmsQ0pvROsDUBjEsgn0aXxfQbri-0cUbaY13fPz2yXmZStaZxiFjW_ShOtkVs26LrQxqypRG-OAgSwZx4lJcoDdz0aM5_Emw";
 
 function loadDropDownData() {
     getEmployeeDetails();
@@ -15,15 +15,6 @@ function showHideFunction(){
         formId.style.display='block';
         
 
-    }
-}
-
-function showHideExpenses() {
-    var cardContainerId = document.getElementById("cardContainer");
-    if (cardContainerId.style.display == "flex"){
-        cardContainerId.style.display = 'none';
-    } else {
-        cardContainerId.style.display = "flex";
     }
 }
 
@@ -195,9 +186,9 @@ function sendData() {
         "paymentMethod": {
             "id": document.getElementById("paymentMethod").value,
         },
-        "invoiceDate": document.getElementById("paymentDate").value,
-        "name": document.getElementById("expenseName").value,
-        "notes": document.getElementById("notes").value,
+        "invoiceDate": document.getElementById("formPaymentDate").value,
+        "name": document.getElementById("formExpenseName").value,
+        "notes": document.getElementById("formNotes").value,
         "payoutWithSalary": payoutWithSalaryCheck(),
         "lineItems": [],
         "dimensions": []
@@ -220,6 +211,7 @@ function sendData() {
             if(xhttp.status == 200){
                 alert("Data created successfully!!!");
                 hideForm();
+                window.location.reload();
             }
         }
     }
@@ -243,6 +235,13 @@ function getDataToDisplay() {
                 var response = JSON.parse(this.responseText)
                 console.log(response)
                 for (iterator = 0; iterator < response.expenses.length; iterator++){
+
+                    if (iterator > 0) { 
+                        var cloneCard = document.getElementById("card");
+                        var clone = cloneCard.cloneNode(true);
+                        document.getElementById("cardContainer").appendChild(clone);
+                    }
+
                     document.getElementById("id").value = response.expenses[iterator].id;
                     document.getElementById("empName").value = response.expenses[iterator].employee["name"];
                     document.getElementById("expenseName").value = response.expenses[iterator].name;
@@ -250,9 +249,10 @@ function getDataToDisplay() {
                     document.getElementById("notes").value = response.expenses[iterator].notes;
                     document.getElementById("currency").value = response.expenses[iterator].currency['currencyName'];
                     document.getElementById("amount").value = response.expenses[iterator].amount;
-                    var cloneCard = document.getElementById("card");
-                    var clone = cloneCard.cloneNode(true);
-                    document.getElementById("cardContainer").appendChild(clone);
+
+                    // if (iterator == 0) {
+                    //     cloneCard.empty();
+                    // }
                 }
             }
         }
@@ -291,11 +291,13 @@ function showDataFromCard (element) {
     xhttp.send(JSON.stringify(obj));
 
     function getDataToForm(response){
+        var data = response.expense.invoiceDate;
+        var data2 = new Date(data)
         var formData = document.forms[1].elements;
         formData[0].value = response.expense.id;
         formData[1].value = response.expense.employee["userId"];
         formData[2].value = response.expense.name;
-        formData[3].value = response.expense.invoiceDate;
+        formData[3].value = data2;
         formData[4].value = response.expense.notes;
         formData[5].value = response.expense.amount;
         formData[6].value = response.expense.currency["currencyCode"];
@@ -322,6 +324,7 @@ function updateData () {
                 alert("Data Updated successfully!!!");
                 hideFormTwo();
                 document.forms[0].reset();
+                window.location.reload();
             } else {
                 alert ("Error : " + this.status);
             }
@@ -410,7 +413,7 @@ function empNameValidation() {
 function expNameValidation() {
     var expenseSpanId = document.getElementById("expenseSpanId");
     var expenseNameId = document.getElementById("formExpenseName");
-    var expenseRegex = /^[A-Za-z0-9]{1,15}$/
+    var expenseRegex = /^[A-Za-z0-9]{1,20}$/
     var expenseNameValue = document.getElementById("formExpenseName").value;
     if (expenseRegex.test(expenseNameValue)){
         expenseSpanId.classList.add("hidden");
@@ -449,7 +452,7 @@ function paymentMethodValidation() {
         } else {
             paymentMethodSpanId.classList.add("hidden");
             paymentMethodId.style.borderColor = "black";
-        }
+        } 
 }
 
 //Currency Method Validation
