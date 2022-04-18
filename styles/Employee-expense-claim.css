@@ -194,6 +194,19 @@
     border: 2px solid black;
 }
 
+.required-feild{
+    color: red;
+}
+
+.card .input-control{
+    padding: 10px 15px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
 
 @media (max-width:1440px){
     .add-button-container .show-button{
