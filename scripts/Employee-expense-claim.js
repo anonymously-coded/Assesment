@@ -1,29 +1,42 @@
-document.cookie = "AccessToken=eyJraWQiOiJhZm5VVTd6STJzdk1ISEcydkl3eE44enlxU0NXck1NNSttUDUxYTZcL0Uydz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJhdWQiOiI3dDgwNzYzN3Q5bmdwYmI1ZHZrOWIwbXV0NSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6ImJhYmJiZGQ2LWY1N2QtNDliYS04MzJmLWE0YTJjY2UwNDNjYSIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQ5ODI0NzkyLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtbm9ydGgtMS5hbWF6b25hd3MuY29tXC9ldS1ub3J0aC0xXzZzMGFMblZFRSIsImNvZ25pdG86dXNlcm5hbWUiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJleHAiOjE2NDk4NTY5NTAsImlhdCI6MTY0OTg1MzM1MCwiZW1haWwiOiJnb3V0aGFtQHppcml1cy5pbiJ9.ELLV0k0hIWboGfXWXRBUS0RMwQUabPXWku5tVi8ILfgLElW9SNfprtwm34sB0_dCfK9hC2Mt0Hc9Y0IMqlyrGADQVlLz6xg6LNZFBapZWyp9FAqRe0tPIbAnSduCiAh-MWMFdhGRNSUbbrDXm2jnN1CcBI0bn0m7D095mm69l71khYeou41XosBDFs8kik7YE7C3_Lyj4rTxF0MWl0U3n-TZgQhWNJobAh-220Q8FJdQ-Z0Lq7yKl_KmsQ0pvROsDUBjEsgn0aXxfQbri-0cUbaY13fPz2yXmZStaZxiFjW_ShOtkVs26LrQxqypRG-OAgSwZx4lJcoDdz0aM5_Emw";
+document.cookie = "AccessToken=eyJraWQiOiJhZm5VVTd6STJzdk1ISEcydkl3eE44enlxU0NXck1NNSttUDUxYTZcL0Uydz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJhdWQiOiI3dDgwNzYzN3Q5bmdwYmI1ZHZrOWIwbXV0NSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6IjcxY2QyZTc2LWM3NjItNGNkOC1hYTdmLTkzNWM4NTVkM2FhZCIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjUwMjU4MzU4LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtbm9ydGgtMS5hbWF6b25hd3MuY29tXC9ldS1ub3J0aC0xXzZzMGFMblZFRSIsImNvZ25pdG86dXNlcm5hbWUiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJleHAiOjE2NTAyNjE5NTgsImlhdCI6MTY1MDI1ODM1OCwiZW1haWwiOiJnb3V0aGFtQHppcml1cy5pbiJ9.kgcz-GrgveSbzjZ2VvqsYGyf5ye0qAwYz7YGS9BFf5AqoxIt8P8TWh3iAEpkpOp1sFi1P-xpeKRtdhx2HOjSdDTq_jvU9eR1ToseQewXBcUXS9jBI6n1szo4ePfd52vjEzjJVpGm5acXM5Vk0MSR2z2qBjaI7-Dtc6PZ7ZmyBz4uKSd_q-81LNg1ym8X_c56yCqTb7Y5wHPNwNq6DJec8bIsUdWPrAKuT87lHdWNY6yNQ0vzgpJaVuLLXu3IQDEaEyaVACSFLZylcp-svQt6N5zXb5icgBoHB73w1_kSfVMLoF-Ah3lgqpUTJbsVIGY8SuWXdkRoU82whb8R5Ro-AQ";
 
 function loadDropDownData() {
     getEmployeeDetails();
     getPaymentType();
     getPaymentMethod();
     getCurrencyType();
+    paymentDateRestrictor();
 }
 
 function showHideFunction(){
     var formId = document.getElementById("showForm");
+    var buttonId = document.getElementById("saveButton");
     if (formId.style.display=='block'){
         formId.style.display='none'
     } else {
         formId.style.display='block';
-        
+    }
 
+    if (buttonId.style.display == "inline"){
+        buttonId.style.display = "none";
+    }else{
+        buttonId.style.display = "inline";
     }
 }
 
 function changeForm () {
-    var formId = document.getElementById("showFormTwo");
+    var formId = document.getElementById("showForm");
+    var buttonId = document.getElementById("updateButton");
     if (formId.style.display=='block'){
         formId.style.display='none';
     } else {
         formId.style.display='block';
+    }
+
+    if (buttonId.style.display == "inline"){
+        buttonId.style.display = "none";
+    }else{
+        buttonId.style.display = "inline";
     }
 }
 
@@ -33,14 +46,10 @@ function hideForm() {
     formId.style.display = "none";
 }
 
-function hideFormTwo() {
-    var formId = document.getElementById("showFormTwo");
-    formId.style.display = "none";
-}
 
 function getEmployeeDetails() {
     var url = "http://localhost/ec/employees";
-    const xhttp = new XMLHttpRequest();
+    var xhttp = new XMLHttpRequest();
     xhttp.open("GET",url,true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.setRequestHeader("Authorization", "Bearer " + document.cookie.split('=')[1]);
@@ -53,8 +62,10 @@ function getEmployeeDetails() {
     xhttp.onreadystatechange = function () {
         if(this.readyState == 4){
             if(this.status == 200){
-                const request = JSON.parse(this.responseText);
+                var request = JSON.parse(this.responseText);
                 getEmployeeData(request);
+            }else{
+                alert("Error :" + this.message) 
             }
         }
         
@@ -99,7 +110,7 @@ function getPaymentType() {
 
 function getPaymentMethod() {
     var url = "http://localhost/ec/paymentMethod";
-    const xhttp = new XMLHttpRequest();
+    var xhttp = new XMLHttpRequest();
     xhttp.open("GET",url,true);
     xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded")
     xhttp.setRequestHeader("Authorization", "Bearer " + document.cookie.split('=')[1]);
@@ -114,6 +125,8 @@ function getPaymentMethod() {
             if(this.status == 200){
                 var response = JSON.parse(this.responseText);
                 getPaymentMethodData(response);
+            }else {
+                alert("Error :" + this.message)
             }
         }
     }
@@ -131,7 +144,7 @@ function getPaymentMethod() {
 
 function getCurrencyType() {
     var url = "http://localhost/ec/currencies";
-    const xhttp = new XMLHttpRequest();
+    var xhttp = new XMLHttpRequest();
     xhttp.open("GET",url,true);
     xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded")
     xhttp.setRequestHeader("Authorization", "Bearer " + document.cookie.split('=')[1]);
@@ -146,6 +159,8 @@ function getCurrencyType() {
             if(this.status == 200){
                 var response = JSON.parse(this.responseText);
                 getCurrencyTypeData(response);
+            }else{
+                alert("Error :" + this.message)
             }
         }
     }
@@ -196,7 +211,7 @@ function sendData() {
     
     
     var url = "http://localhost/ec/expense";
-    const xhttp = new XMLHttpRequest();
+    var xhttp = new XMLHttpRequest();
     xhttp.open("POST",url,true);
     xhttp.setRequestHeader("Content-type","application/json");
     xhttp.setRequestHeader("Authorization", "Bearer " + document.cookie.split('=')[1]);
@@ -210,8 +225,9 @@ function sendData() {
         if(xhttp.readyState == 4){
             if(xhttp.status == 200){
                 alert("Data created successfully!!!");
-                hideForm();
                 window.location.reload();
+            }else {
+                alert("Error :" + " Status code = " + this.status + " and readystate = " + this.readyState)
             }
         }
     }
@@ -235,30 +251,28 @@ function getDataToDisplay() {
                 var response = JSON.parse(this.responseText)
                 console.log(response)
                 for (iterator = 0; iterator < response.expenses.length; iterator++){
-
-                    if (iterator > 0) { 
-                        var cloneCard = document.getElementById("card");
-                        var clone = cloneCard.cloneNode(true);
-                        document.getElementById("cardContainer").appendChild(clone);
-                    }
-
-                    document.getElementById("id").value = response.expenses[iterator].id;
-                    document.getElementById("empName").value = response.expenses[iterator].employee["name"];
-                    document.getElementById("expenseName").value = response.expenses[iterator].name;
-                    document.getElementById("paymentDate").value = response.expenses[iterator].invoiceDate;
-                    document.getElementById("notes").value = response.expenses[iterator].notes;
-                    document.getElementById("currency").value = response.expenses[iterator].currency['currencyName'];
-                    document.getElementById("amount").value = response.expenses[iterator].amount;
-
-                    // if (iterator == 0) {
-                    //     cloneCard.empty();
-                    // }
+                    var clone = document.getElementById("card").cloneNode(true);
+                    var inputElements = clone.getElementsByTagName("input"); 
+                    inputElements[0].value += response.expenses[iterator].id;
+                    inputElements[1].value += response.expenses[iterator].employee["name"];
+                    inputElements[2].value += response.expenses[iterator].name;
+                    inputElements[3].value += response.expenses[iterator].invoiceDate.split("T")[0];
+                    inputElements[4].value += response.expenses[iterator].notes;
+                    inputElements[5].value += response.expenses[iterator].amount;
+                    inputElements[6].value += response.expenses[iterator].currency['currencyName'];
+                    document.getElementById("cardContainer").append(clone);
+                    
                 }
+                var card = document.getElementById("card");
+                    card.style.display = "none";
+            }else{
+                alert("Error : " + this.message)
             }
         }
     }
     var object = {}
-    xhttp.send(JSON.stringify(object));
+    json = JSON.stringify(object);
+    xhttp.send(json);
 
 }
 getDataToDisplay();
@@ -273,6 +287,8 @@ function showDataFromCard (element) {
             if(this.status == 200){
                 var response = JSON.parse(this.responseText);
                 getDataToForm(response);
+            }else {
+                alert("Error :" + this.message)
             }
         }
     }
@@ -287,27 +303,25 @@ function showDataFromCard (element) {
     xhttp.setRequestHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
     xhttp.setRequestHeader("Accept","application/json")
     xhttp.setRequestHeader("companyId","14");
-    var obj = {}
-    xhttp.send(JSON.stringify(obj));
+    
 
     function getDataToForm(response){
-        var data = response.expense.invoiceDate;
-        var data2 = new Date(data)
-        var formData = document.forms[1].elements;
+        var formData = document.getElementById("createDataForm").elements;
         formData[0].value = response.expense.id;
         formData[1].value = response.expense.employee["userId"];
         formData[2].value = response.expense.name;
-        formData[3].value = data2;
-        formData[4].value = response.expense.notes;
-        formData[5].value = response.expense.amount;
-        formData[6].value = response.expense.currency["currencyCode"];
+        formData[5].value = response.expense.invoiceDate.split("T")[0];
+        formData[6].value = response.expense.notes;
+        formData[7].value = response.expense.amount;
+        formData[8].value = response.expense.currency["currencyCode"];
     }
+    xhttp.send();
 }
 
 //Update operation
 function updateData () {
-    const xhttp = new XMLHttpRequest();
-    var url = "http://localhost/ec/expense?id=" + document.forms[1].elements[0].value;
+    var xhttp = new XMLHttpRequest();
+    var url = "http://localhost/ec/expense?id=" + document.forms[0].elements[0].value;
     xhttp.open("PUT",url,true);
     xhttp.setRequestHeader("Content-type","application/json");
     xhttp.setRequestHeader("Authorization", "Bearer " + document.cookie.split('=')[1]);
@@ -322,42 +336,50 @@ function updateData () {
             if(this.status == 200){
                 getDataToDisplay();
                 alert("Data Updated successfully!!!");
-                hideFormTwo();
+                hideForm();
                 document.forms[0].reset();
                 window.location.reload();
             } else {
-                alert ("Error : " + this.status);
+                alert ("Error : " + this.message);
             }
         }
 
         
+    }
+    function payoutWithSalaryCheck () {
+        var checkBoxCheck = document.getElementById("checkBox").checked
+        if(checkBoxCheck){
+            checkBoxCheck.value = "Yes";
+        } else {
+            checkBoxCheck.value = "No";
         }
-        var dataOfForm = document.getElementById("updateDataForm").elements;
+    }
+        var dataOfForm = document.getElementById("createDataForm").elements;
         var object = {
             "attachments": [],
-            "amount": dataOfForm[5].value,
+            "amount": dataOfForm[7].value,
             "currency": {
-                "currencyCode": dataOfForm[6].value,
+                "currencyCode": dataOfForm[8].value,
             },
             "employee": {
                 "userId": dataOfForm[1].value,
             },
             "paymentType": {
-                "id": 170
+                "id": dataOfForm[3].value,
             },
             "paymentMethod": {
-                "id": 2
+                "id": dataOfForm[4].value,
             },
-            "invoiceDate": dataOfForm[3].value,
+            "invoiceDate": dataOfForm[5].value,
             "name": dataOfForm[2].value,
             "hasImage": true,
             "imageBase64": "",
             "isActive": true,
-            "notes": dataOfForm[4].value,
-            "payoutWithSalary": null,
+            "notes": dataOfForm[6].value,
+            "payoutWithSalary": payoutWithSalaryCheck(),
             "lineItems": [],
             "dimensions": []
-    }
+        }
     var patchData = JSON.stringify(object);
     xhttp.send(patchData);
 
@@ -366,7 +388,7 @@ function updateData () {
 
 //Delete operation
 function removeData(element){
-    const xhttp = new XMLHttpRequest();
+    var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if(this.readyState == 4){
             if(this.status === 200){
@@ -374,7 +396,7 @@ function removeData(element){
                 window.location.reload();
                 
             }else {
-                alert("Error : " + this.status);
+                alert("Error : " + this.message);
             }
         }
     };
@@ -413,7 +435,7 @@ function empNameValidation() {
 function expNameValidation() {
     var expenseSpanId = document.getElementById("expenseSpanId");
     var expenseNameId = document.getElementById("formExpenseName");
-    var expenseRegex = /^[A-Za-z0-9]{1,20}$/
+    var expenseRegex = /^[A-Za-z0-9 ]{1,20}$/
     var expenseNameValue = document.getElementById("formExpenseName").value;
     if (expenseRegex.test(expenseNameValue)){
         expenseSpanId.classList.add("hidden");
@@ -470,7 +492,7 @@ function currencyMethodValidation() {
     }
 }
 
-//Total Amount Feild Validation
+//Total Amount Field Validation
 function totalamountValidation() {
     var totalId = document.getElementById("total");
     var totalIdValue = document.getElementById("total").value;
@@ -509,4 +531,21 @@ function paymentDateValidation() {
         paymentDateSpanId.classList.add("hidden");
         paymentDateId.style.borderColor = "black";
     } 
+    
 }
+function paymentDateRestrictor() {
+    var today = new Date();
+    var date = today.getDate();
+    var month = today.getMonth() + 1;
+    var year = today.getFullYear();
+    if (date < 10){
+        date = "0" + date;
+    }
+    if (month < 10){
+        month = "0" + month;
+    }
+    var constructDate = year + "-" + month + "-" + date ;
+    document.getElementById("formPaymentDate").setAttribute("max",constructDate);
+}
+
+

@@ -29,10 +29,6 @@
                     <input type="text" id="empName" class="input-control">
                     <label class="label-control">Expense Name :</label>
                     <input type="text" id="expenseName" class="input-control">
-                    <label class="label-control">Payment Type :</label>
-                    <input type="text" id="cardPaymentType" class="input-control">
-                    <label class="label-control">Payment Method :</label>
-                    <input type="text" id="cardPaymentMethod" class="input-control">
                     <label class="label-control">Payment Date :</label>
                     <input type="text" id="paymentDate" class="input-control">
                     <label class="label-control">Notes :</label>
@@ -41,8 +37,6 @@
                     <input type="text" id="amount" class="input-control">
                     <label class="label-control">Currency :</label>
                     <input type="text" id="currency" class="input-control">
-                    <input type="checkbox" name="cardCheckBox" id="cardCheckBox" class="check-box-control">
-                    <label class="label-control">Payout With Salary</label>
                     <br>
                     <br>
                     <button type="button" id="editButton" class="edit-button" onclick="showDataFromCard(this)">Edit</button>
@@ -61,18 +55,24 @@
                     <i class="bi bi-x-circle-fill" onclick="hideForm()"></i>
                 </div>
                 <div class="row">
+                    <div class="label-control" style="display: none;">
+                        <label for="id">ID :</label>
+                    </div>
+                    <input type="text" name="idOfEmployee" id="idOfEmployee" class="input-control" style="display: none;">
+                </div>
+                <div class="row">
                     <div class="label-control">
-                        <label for="employeeName">Employee :<span class="required-feild">*</span></label>
+                        <label for="employeeName">Employee :<span class="required-field">*</span></label>
                     </div>
                     <select name="employeeName" id="employeeName" class="input-control" required onblur="empNameValidation()">
                         required>
                         <option value="" selected="selected">Select...</option>
                     </select>
-                    <span class="hidden" id="employeeSpanId">**This feild cannot be empty!! Please fill out this feild.</span>
+                    <span class="hidden" id="employeeSpanId">**This field cannot be empty!! Please fill out this field.</span>
                 </div>
                 <div class="row">
                     <div class="label-control">
-                        <label for="expenseName">Expense Name :<span class="required-feild">*</span></label>
+                        <label for="expenseName">Expense Name :<span class="required-field">*</span></label>
                     </div>
                     <input type="text" id="formExpenseName" name="expenseName" class="input-control" maxlength="50" 
                         placeholder="Expense Name" onblur="expNameValidation()">
@@ -80,28 +80,28 @@
                 </div>
                 <div class="row">
                     <div class="label-control">
-                        <label for="paymentType">Payment Type :<span class="required-feild">*</span></label>
+                        <label for="paymentType">Payment Type :<span class="required-field">*</span></label>
                     </div>
                     <select name="paymentType" id="paymentType" class="input-control" onblur="paymentTypeValidation()">
                         <option value="" selected="selected">Select...</option>
                     </select>
-                    <span class="hidden" id="paymentTypeSpanId">**This feild cannot be empty!! Please fill out this feild.</span>
+                    <span class="hidden" id="paymentTypeSpanId">**This field cannot be empty!! Please fill out this field.</span>
                 </div>
                 <div class="row">
                     <div class="label-control">
-                        <label for="paymentMethod">Payment Method :<span class="required-feild">*</span></label>
+                        <label for="paymentMethod">Payment Method :<span class="required-field">*</span></label>
                     </div>
                     <select name="paymentMethod" id="paymentMethod" class="input-control" onblur="paymentMethodValidation()">
                         <option value="" selected="selected">Select...</option>
                     </select>
-                    <span class="hidden" id="paymentMethodSpanId">**This feild cannot be empty!! Please fill out this feild.</span>
+                    <span class="hidden" id="paymentMethodSpanId">**This field cannot be empty!! Please fill out this field.</span>
                 </div>
                 <div class="row">
                     <div class="label-control">
-                        <label for="paymentDate">Payment Date :<span class="required-feild">*</span></label>
+                        <label for="paymentDate">Payment Date :<span class="required-field">*</span></label>
                     </div>
                     <input type="date" id="formPaymentDate" name="paymentDate" class="input-control" onblur="paymentDateValidation()"">
-                    <span class="hidden" id="paymentDateSpanId">**This feild cannot be empty!! Please fill out this feild.</span>
+                    <span class="hidden" id="paymentDateSpanId">**This field cannot be empty!! Please fill out this field.</span>
                 </div>
                 <div class="row">
                     <div class="label-control">
@@ -111,20 +111,20 @@
                 </div>
                 <div class="row">
                     <div class="label-control">
-                        <label for="total">Total :<span class="required-feild">*</span></label>
+                        <label for="total">Total :<span class="required-field">*</span></label>
                     </div>
                     <input type="text" id="total" name="total" class="input-control" required placeholder="0.00" onblur="totalamountValidation()">
-                    <span class="hidden" id="totalSpanIdOne">**This feild should not be empty!!... Please Enter the Amount</span>
+                    <span class="hidden" id="totalSpanIdOne">**This field should not be empty!!... Please Enter the Amount</span>
                     <span class="hidden" id="totalSpanIdTwo">**Please Enter in the format of "0.00"</span>
                 </div>
                 <div class="row">
                     <div class="label-control">
-                        <label for="currency">Currency :<span class="required-feild">*</span></label>
+                        <label for="currency">Currency :<span class="required-field">*</span></label>
                     </div>
                     <select name="currency" id="currencyMethod" class="input-control" onblur="currencyMethodValidation()">
                         <option value="" selected="selected">Currency Type...</option>
                     </select>
-                    <span class="hidden" id="currencyMethodSpanId">**This feild cannot be empty!! Please fill out this feild.</span>
+                    <span class="hidden" id="currencyMethodSpanId">**This field cannot be empty!! Please fill out this field.</span>
                 </div>
                 <div class="check-box">
                     <input type="checkbox" name="checkBox" id="checkBox" class="check-box-control">
@@ -132,66 +132,9 @@
                 </div>
                 <div class="row">
                     <div class="label-control">
-                        <button type="button" class="submit-button" onclick="sendData()">Save</button>
+                        <button type="button" class="submit-button" onclick="sendData()" style="display: none;" id="saveButton">Save</button>
+                        <button type="button" class="submit-button" onclick="updateData()" style="display: none;" id="updateButton">Update</button>
                         <button type="button" class="submit-button" onclick="hideForm()">Cancel</button>
-                    </div>
-                </div>
-
-            </form>
-        </div>
-
-        <div class="show-form-two" id="showFormTwo">
-            <form id="updateDataForm" class="form" name="updateDataForm">
-                <div class="cancel-icon">
-                    <i class="bi bi-x-circle-fill" onclick="hideFormTwo()"></i>
-                </div>
-                <div class="row">
-                    <div class="label-control" style="display: none;">
-                        <label for="id">ID :</label>
-                    </div>
-                    <input type="text" name="idOfEmployee" id="idOfEmployee" class="input-control" style="display: none;">
-                </div>
-                <div class="row">
-                    <div class="label-control">
-                        <label for="employeeName">Employee :</label>
-                    </div>
-                    <select name="employeeNameTwo" id="employeeNameTwo" class="input-control">
-                    </select>
-                </div>
-                <div class="row">
-                    <div class="label-control">
-                        <label for="expenseName">Expense Name :</label>
-                    </div>
-                    <input type="text" id="expenseNameTwo" name="expenseNameTwo" class="input-control">
-                </div>
-                <div class="row">
-                    <div class="label-control">
-                        <label for="paymentDate">Payment Date :</label>
-                    </div>
-                    <input type="date" id="paymentDateTwo" name="paymentDateTwo" class="input-control">
-                </div>
-                <div class="row">
-                    <div class="label-control">
-                        <label for="notes">Notes :</label>
-                    </div>
-                    <input type="text" id="notesTwo" class="input-control" name="notesTwo">
-                </div>
-                <div class="row">
-                    <div class="label-control">
-                        <label for="total">Total :</label>
-                    </div>
-                    <input type="text" id="totalTwo" name="totalTwo" class="input-control" required>
-                </div>
-                <div class="row">
-                    <div class="label-control">
-                        <label for="currency">Currency :</label>
-                    </div>
-                    <select name="currencyNameTwo" id="currencyNameTwo" class="input-control"></select>
-                </div>
-                <div class="row">
-                    <div class="label-control">
-                        <button type="button" class="submit-button" onclick="updateData()">Update</button>
-                        <button type="button" class="submit-button" onclick="hideFormTwo()">Cancel</button>
                     </div>
                 </div>
 
