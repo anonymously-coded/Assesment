@@ -178,14 +178,7 @@ function getCurrencyType() {
 
 //Post operation
 function sendData() {
-    function payoutWithSalaryCheck () {
-        if(document.getElementById("checkBox").checked){
-            payoutWithSalaryCheck.value = "Yes";
-        } else {
-            payoutWithSalaryCheck.value = "No";
-        }
-    }
-
+    
     var formDetails = {
         "attachments": [],
         "amount": document.getElementById("total").value,
@@ -204,7 +197,7 @@ function sendData() {
         "invoiceDate": document.getElementById("formPaymentDate").value,
         "name": document.getElementById("formExpenseName").value,
         "notes": document.getElementById("formNotes").value,
-        "payoutWithSalary": payoutWithSalaryCheck(),
+        "payoutWithSalary": document.getElementById("checkBox").checked,
         "lineItems": [],
         "dimensions": []
     }
@@ -249,14 +242,13 @@ function getDataToDisplay() {
         if(this.readyState == 4){
             if(this.status == 200){
                 var response = JSON.parse(this.responseText)
-                console.log(response)
                 for (iterator = 0; iterator < response.expenses.length; iterator++){
                     var clone = document.getElementById("card").cloneNode(true);
                     var inputElements = clone.getElementsByTagName("input"); 
                     inputElements[0].value += response.expenses[iterator].id;
                     inputElements[1].value += response.expenses[iterator].employee["name"];
                     inputElements[2].value += response.expenses[iterator].name;
-                    inputElements[3].value += response.expenses[iterator].invoiceDate.split("T")[0];
+                    inputElements[3].value += dateConverter(response.expenses[iterator].invoiceDate.split("T")[0]);
                     inputElements[4].value += response.expenses[iterator].notes;
                     inputElements[5].value += response.expenses[iterator].amount;
                     inputElements[6].value += response.expenses[iterator].currency['currencyName'];
@@ -310,10 +302,13 @@ function showDataFromCard (element) {
         formData[0].value = response.expense.id;
         formData[1].value = response.expense.employee["userId"];
         formData[2].value = response.expense.name;
+        formData[3].value = response.expense.paymentType["id"];
+        formData[4].value = response.expense.paymentMethod["id"];
         formData[5].value = response.expense.invoiceDate.split("T")[0];
         formData[6].value = response.expense.notes;
         formData[7].value = response.expense.amount;
         formData[8].value = response.expense.currency["currencyCode"];
+        formData[9].checked = response.expense.payoutWithSalary;
     }
     xhttp.send();
 }
@@ -335,6 +330,12 @@ function updateData () {
         if (this.readyState == 4){
             if(this.status == 200){
                 getDataToDisplay();
+                empNameValidation();
+                expNameValidation();
+                paymentTypeValidation();
+                paymentMethodValidation();
+                currencyMethodValidation();
+                paymentDateValidation();
                 alert("Data Updated successfully!!!");
                 hideForm();
                 document.forms[0].reset();
@@ -346,14 +347,7 @@ function updateData () {
 
         
     }
-    function payoutWithSalaryCheck () {
-        var checkBoxCheck = document.getElementById("checkBox").checked
-        if(checkBoxCheck){
-            checkBoxCheck.value = "Yes";
-        } else {
-            checkBoxCheck.value = "No";
-        }
-    }
+
         var dataOfForm = document.getElementById("createDataForm").elements;
         var object = {
             "attachments": [],
@@ -376,7 +370,7 @@ function updateData () {
             "imageBase64": "",
             "isActive": true,
             "notes": dataOfForm[6].value,
-            "payoutWithSalary": payoutWithSalaryCheck(),
+            "payoutWithSalary": dataOfForm[9].checked,
             "lineItems": [],
             "dimensions": []
         }
@@ -549,3 +543,30 @@ function paymentDateRestrictor() {
 }
 
 
+
+function validationForm () {
+    var formElements = document.forms[0].elements;
+    if (formElements[1].value == "" || formElements[2].value == "" || formElements[3].value == "" || formElements[4].value == "" || formElements[5].value == "" || formElements[7].value == "" || formElements[8].value == ""){
+        alert("Some Fields are missing in the form!!!");
+        empNameValidation();
+        expNameValidation();
+        paymentTypeValidation();
+        paymentMethodValidation();
+        currencyMethodValidation();
+        totalamountValidation();
+        paymentDateValidation();
+    }else{
+    sendData();
+    }
+}
+
+function saveButtonOnclick() {
+    validationForm();
+}
+
+function dateConverter(givenDate) {
+    var date = new Date(givenDate).getDate();
+    var month = new Date(givenDate).getMonth() + 1;
+    var fullYear = new Date(givenDate).getFullYear();
+    return month + "/" + date + "/" + fullYear;
+}
