@@ -44,6 +44,7 @@ function changeForm () {
 function hideForm() {
     var formId = document.getElementById("showForm");
     formId.style.display = "none";
+    document.forms[0].reset();
 }
 
 
@@ -569,4 +570,10 @@ function dateConverter(givenDate) {
     var month = new Date(givenDate).getMonth() + 1;
     var fullYear = new Date(givenDate).getFullYear();
     return month + "/" + date + "/" + fullYear;
+}
+
+function lightDarkModeToggle() {
+    var iconId = document.getElementById("lightMode");
+    document.body.classList.toggle("light-mode");
+    iconId.className = iconId.className == "bi bi-toggle-on" ? "bi bi-toggle-off" : "bi bi-toggle-on"; 
 }

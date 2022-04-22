@@ -15,6 +15,7 @@
 </head>
 
 <body class="body" onload="loadDropDownData()">
+    <i class="bi bi-toggle-on" id="lightMode" onclick="lightDarkModeToggle()"></i>
     <div class="heading-bar">
         <h2 class="heading-bar-content">Employee Expense Claim
         </h2>
@@ -26,17 +27,17 @@
                     <label class="label-control" style="display: none;">ID :</label>
                     <input type="text" id="id" class="input-control" style="display: none;">
                     <label class="label-control">Employee :</label>
-                    <input type="text" id="empName" class="input-control">
+                    <input type="text" id="empName" class="input-control" readonly>
                     <label class="label-control">Expense Name :</label>
-                    <input type="text" id="expenseName" class="input-control">
+                    <input type="text" id="expenseName" class="input-control" readonly>
                     <label class="label-control">Payment Date :</label>
-                    <input type="text" id="paymentDate" class="input-control">
+                    <input type="text" id="paymentDate" class="input-control" readonly>
                     <label class="label-control">Notes :</label>
-                    <input type="text" id="notes" class="input-control">
+                    <input type="textarea" id="notes" class="input-control" readonly>
                     <label class="label-control">Total :</label>
-                    <input type="text" id="amount" class="input-control">
+                    <input type="text" id="amount" class="input-control" readonly>
                     <label class="label-control">Currency :</label>
-                    <input type="text" id="currency" class="input-control">
+                    <input type="text" id="currency" class="input-control" readonly>
                     <br>
                     <br>
                     <button type="button" id="editButton" class="edit-button" onclick="showDataFromCard(this)">Edit</button>

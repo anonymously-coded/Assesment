@@ -20,17 +20,6 @@
     background-color: rgba(28, 26, 26, 0.8);
 }
 
-.show-form-two{
-    display: none;
-    position: absolute;
-    width: 100%;
-    margin-left: 0px;
-    top: 0;
-    background-color: rgba(28, 26, 26, 0.8);
-    left: -20px;
-    height: 100vh;
-}
-
 .form{
     width: 30%;
     background-color: rgb(218, 236, 229);
@@ -218,4 +207,24 @@
     .add-button-container .show-button{
         right: 15%;
     }
+}
+
+.light-mode{
+    background-color: rgb(237, 227, 227);
+}
+
+.bi-toggle-on{
+    position: absolute;
+    right: 2%;
+    z-index: 30;
+    font-size: x-large;
+    cursor: pointer;
+}
+
+.bi-toggle-off{
+    position: absolute;
+    right: 2%;
+    z-index: 30;
+    font-size: x-large;
+    cursor: pointer;
 }
