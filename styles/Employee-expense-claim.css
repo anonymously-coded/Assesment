@@ -144,10 +144,6 @@
     padding: 20px;
 }
 
-.data-container{
-    flex-basis: 33.33%;
-}
-
 .card:hover {
     box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
 }
@@ -189,8 +185,9 @@
 
 .card .input-control{
     padding: 10px 15px;
-    margin: 4px 0;
+    margin: 4px 4px;
     display: inline-block;
+    width: 95%;
     border: 1px solid #ccc;
     border-radius: 6px;
     box-sizing: border-box;
@@ -214,7 +211,7 @@
 }
 
 .bi-toggle-on{
-    position: absolute;
+    position: fixed;
     right: 2%;
     z-index: 30;
     font-size: x-large;
@@ -222,7 +219,7 @@
 }
 
 .bi-toggle-off{
-    position: absolute;
+    position: fixed;
     right: 2%;
     z-index: 30;
     font-size: x-large;

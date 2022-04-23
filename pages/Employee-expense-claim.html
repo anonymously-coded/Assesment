@@ -50,6 +50,7 @@
             </div>
         </div>
 
+        
         <div class="show-form" id="showForm">
             <form id="createDataForm" class="form" name="createDataForm">
                 <div class="cancel-icon">
@@ -63,17 +64,17 @@
                 </div>
                 <div class="row">
                     <div class="label-control">
-                        <label for="employeeName">Employee :<span class="required-field">*</span></label>
+                        <label for="employeeName">Employee<span class="required-field">*</span>:</label>
                     </div>
                     <select name="employeeName" id="employeeName" class="input-control" required onblur="empNameValidation()">
-                        required>
+                      
                         <option value="" selected="selected">Select...</option>
                     </select>
                     <span class="hidden" id="employeeSpanId">**This field cannot be empty!! Please fill out this field.</span>
                 </div>
                 <div class="row">
                     <div class="label-control">
-                        <label for="expenseName">Expense Name :<span class="required-field">*</span></label>
+                        <label for="expenseName">Expense Name<span class="required-field">*</span>:</label>
                     </div>
                     <input type="text" id="formExpenseName" name="expenseName" class="input-control" maxlength="50" 
                         placeholder="Expense Name" onblur="expNameValidation()">
@@ -81,7 +82,7 @@
                 </div>
                 <div class="row">
                     <div class="label-control">
-                        <label for="paymentType">Payment Type :<span class="required-field">*</span></label>
+                        <label for="paymentType">Payment Type<span class="required-field">*</span>:</label>
                     </div>
                     <select name="paymentType" id="paymentType" class="input-control" onblur="paymentTypeValidation()">
                         <option value="" selected="selected">Select...</option>
@@ -90,7 +91,7 @@
                 </div>
                 <div class="row">
                     <div class="label-control">
-                        <label for="paymentMethod">Payment Method :<span class="required-field">*</span></label>
+                        <label for="paymentMethod">Payment Method<span class="required-field">*</span>:</label>
                     </div>
                     <select name="paymentMethod" id="paymentMethod" class="input-control" onblur="paymentMethodValidation()">
                         <option value="" selected="selected">Select...</option>
@@ -99,7 +100,7 @@
                 </div>
                 <div class="row">
                     <div class="label-control">
-                        <label for="paymentDate">Payment Date :<span class="required-field">*</span></label>
+                        <label for="paymentDate">Payment Date<span class="required-field">*</span> :</label>
                     </div>
                     <input type="date" id="formPaymentDate" name="paymentDate" class="input-control" onblur="paymentDateValidation()"">
                     <span class="hidden" id="paymentDateSpanId">**This field cannot be empty!! Please fill out this field.</span>
@@ -108,19 +109,19 @@
                     <div class="label-control">
                         <label for="notes">Notes :</label>
                     </div>
-                    <input type="text" id="formNotes" class="input-control" name="notes">
+                    <textarea type="text" id="formNotes" class="input-control" name="notes" maxlength="150" cols="30" rows="1" style="resize: none;"></textarea>
                 </div>
                 <div class="row">
                     <div class="label-control">
-                        <label for="total">Total :<span class="required-field">*</span></label>
+                        <label for="total">Total<span class="required-field">*</span> :</label>
                     </div>
-                    <input type="text" id="total" name="total" class="input-control" required placeholder="0.00" onblur="totalamountValidation()">
+                    <input type="text" id="total" name="total" class="input-control" required placeholder="0.00" onblur="this.value=parseFloat(this.value).toFixed(2);totalamountValidation();">
                     <span class="hidden" id="totalSpanIdOne">**This field should not be empty!!... Please Enter the Amount</span>
                     <span class="hidden" id="totalSpanIdTwo">**Please Enter in the format of "0.00"</span>
                 </div>
                 <div class="row">
                     <div class="label-control">
-                        <label for="currency">Currency :<span class="required-field">*</span></label>
+                        <label for="currency">Currency<span class="required-field">*</span> :</label>
                     </div>
                     <select name="currency" id="currencyMethod" class="input-control" onblur="currencyMethodValidation()">
                         <option value="" selected="selected">Currency Type...</option>

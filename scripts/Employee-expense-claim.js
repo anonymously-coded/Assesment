@@ -8,13 +8,45 @@ function loadDropDownData() {
     paymentDateRestrictor();
 }
 
-function showHideFunction(){
+function showHideFunction() {
     var formId = document.getElementById("showForm");
     var buttonId = document.getElementById("saveButton");
-    if (formId.style.display=='block'){
-        formId.style.display='none'
+    if (formId.style.display == 'block') {
+        var expenseSpanId = document.getElementById("expenseSpanId");
+        expenseSpanId.classList.add("hidden");
+        var employeeSpanId = document.getElementById("employeeSpanId");
+        employeeSpanId.classList.add("hidden");
+        var employeeNameId = document.getElementById("employeeName");
+        employeeNameId.style.borderColor = "black";
+        var expenseNameId = document.getElementById("formExpenseName");
+        expenseNameId.style.borderColor = "black";
+        var paymentTypeId = document.getElementById("paymentType");
+        paymentTypeId.style.borderColor = "black";
+        var paymentTypeSpanId = document.getElementById("paymentTypeSpanId");
+        paymentTypeSpanId.classList.add("hidden");
+        var paymentMethodId = document.getElementById("paymentMethod");
+        var paymentMethodSpanId = document.getElementById("paymentMethodSpanId");
+        paymentMethodSpanId.classList.add("hidden");
+        paymentMethodId.style.borderColor = "black";
+        var currencyMethodId = document.getElementById("currencyMethod");
+        var currencyMethodSpanId = document.getElementById("currencyMethodSpanId");
+        currencyMethodSpanId.classList.add("hidden");
+        currencyMethodId.style.borderColor = "black";
+        var totalId = document.getElementById("total");
+        var totalSpanIdOne = document.getElementById("totalSpanIdOne");
+        var totalSpanIdTwo = document.getElementById("totalSpanIdTwo");
+        totalSpanIdOne.classList.add("hidden");
+        totalSpanIdTwo.classList.add("hidden");
+        totalId.style.borderColor = "black";
+        var paymentDateId = document.getElementById("formPaymentDate");
+        var paymentDateSpanId = document.getElementById("paymentDateSpanId");
+        paymentDateSpanId.classList.add("hidden");
+        paymentDateId.style.borderColor = "black";
+        formId.style.display='none';
+        
     } else {
         formId.style.display='block';
+        
     }
 
     if (buttonId.style.display == "inline"){
@@ -44,7 +76,11 @@ function changeForm () {
 function hideForm() {
     var formId = document.getElementById("showForm");
     formId.style.display = "none";
-    document.forms[0].reset();
+    var buttonId = document.getElementById("updateButton");
+    buttonId.style.display ="none";
+    var buttonIdTwo = document.getElementById("saveButton");
+    buttonIdTwo.style.display = "none";
+    window.location.reload();
 }
 
 
@@ -62,6 +98,7 @@ function getEmployeeDetails() {
     xhttp.send();
     xhttp.onreadystatechange = function () {
         if(this.readyState == 4){
+            json = JSON.parse(this.responseText == "" ? '{"message" : "Unable to process your request}' : this.responseText);
             if(this.status == 200){
                 var request = JSON.parse(this.responseText);
                 getEmployeeData(request);
@@ -123,6 +160,7 @@ function getPaymentMethod() {
     xhttp.send();
     xhttp.onreadystatechange = function () {
         if(this.readyState == 4){
+            json = JSON.parse(this.responseText == "" ? '{"message" : "Unable to process your request}' : this.responseText);
             if(this.status == 200){
                 var response = JSON.parse(this.responseText);
                 getPaymentMethodData(response);
@@ -157,6 +195,7 @@ function getCurrencyType() {
     xhttp.send();
     xhttp.onreadystatechange = function () {
         if(this.readyState == 4){
+            json = JSON.parse(this.responseText == "" ? '{"message" : "Unable to process your request}' : this.responseText);
             if(this.status == 200){
                 var response = JSON.parse(this.responseText);
                 getCurrencyTypeData(response);
@@ -217,6 +256,7 @@ function sendData() {
     var postFormData = JSON.stringify(formDetails);
     xhttp.onreadystatechange = function () {
         if(xhttp.readyState == 4){
+            json = JSON.parse(this.responseText == "" ? '{"message" : "Unable to process your request}' : this.responseText);
             if(xhttp.status == 200){
                 alert("Data created successfully!!!");
                 window.location.reload();
@@ -241,6 +281,7 @@ function getDataToDisplay() {
     xhttp.setRequestHeader("companyId","14");
     xhttp.onload = function () {
         if(this.readyState == 4){
+            json = JSON.parse(this.responseText == "" ? '{"message" : "Unable to process your request}' : this.responseText);
             if(this.status == 200){
                 var response = JSON.parse(this.responseText)
                 for (iterator = 0; iterator < response.expenses.length; iterator++){
@@ -277,6 +318,7 @@ function showDataFromCard (element) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4){
+            json = JSON.parse(this.responseText == "" ? '{"message" : "Unable to process your request}' : this.responseText);
             if(this.status == 200){
                 var response = JSON.parse(this.responseText);
                 getDataToForm(response);
@@ -329,6 +371,7 @@ function updateData () {
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4){
+            json = JSON.parse(this.responseText == "" ? '{"message" : "Unable to process your request}' : this.responseText);
             if(this.status == 200){
                 getDataToDisplay();
                 empNameValidation();
@@ -386,6 +429,7 @@ function removeData(element){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if(this.readyState == 4){
+            json = JSON.parse(this.responseText == "" ? '{"message" : "Unable to process your request}' : this.responseText);
             if(this.status === 200){
                 alert("Data deleted successfully!!!");
                 window.location.reload();
@@ -467,8 +511,8 @@ function paymentMethodValidation() {
             paymentMethodSpanId.style.color = "red";
             paymentMethodId.style.borderColor = "red";
         } else {
-            paymentMethodSpanId.classList.add("hidden");
-            paymentMethodId.style.borderColor = "black";
+                paymentMethodSpanId.classList.add("hidden");
+                paymentMethodId.style.borderColor = "black";
         } 
 }
 
@@ -544,32 +588,33 @@ function paymentDateRestrictor() {
 }
 
 
-
 function validationForm () {
-    var formElements = document.forms[0].elements;
-    if (formElements[1].value == "" || formElements[2].value == "" || formElements[3].value == "" || formElements[4].value == "" || formElements[5].value == "" || formElements[7].value == "" || formElements[8].value == ""){
-        alert("Some Fields are missing in the form!!!");
-        empNameValidation();
-        expNameValidation();
-        paymentTypeValidation();
-        paymentMethodValidation();
-        currencyMethodValidation();
-        totalamountValidation();
-        paymentDateValidation();
-    }else{
-    sendData();
+    if (!document.forms[0].checkValidity()) {
+        var formElements = document.forms[0].elements;
+        for (const element of formElements) {
+            empNameValidation();
+            expNameValidation();
+            paymentTypeValidation();
+            paymentMethodValidation();
+            currencyMethodValidation();
+            totalamountValidation();
+            paymentDateValidation();
+        }
+    } else{
+        sendData();
     }
 }
+
 
 function saveButtonOnclick() {
     validationForm();
 }
 
 function dateConverter(givenDate) {
-    var date = new Date(givenDate).getDate();
-    var month = new Date(givenDate).getMonth() + 1;
-    var fullYear = new Date(givenDate).getFullYear();
-    return month + "/" + date + "/" + fullYear;
+    date = givenDate.split("-")[2];
+    month = givenDate.split("-")[1];
+    fullYear = givenDate.split("-")[0];
+    return date + "-" + month + "-" + fullYear;
 }
 
 function lightDarkModeToggle() {
